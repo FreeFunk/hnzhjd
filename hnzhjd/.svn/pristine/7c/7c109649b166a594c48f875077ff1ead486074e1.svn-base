@@ -1,0 +1,30 @@
+.remark-item{
+    border-color: #e6e6e6;
+    background-color: #e6e6e6;
+    position: relative;
+    margin-top: 3px;
+}
+.remark-item .remark-content{
+    background-color: #e6e6e6;
+    padding:10px 20px;
+    float: none;
+}
+.remark-btn{
+    background-color: #ff5722;
+    border-radius: 5px;
+    color: white;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+.right-bottom{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.right-top{
+    position: absolute;
+    top: 0;
+    right: 0;
+}

@@ -1,0 +1,135 @@
+package com.edgedo.sys.entity;
+
+import java.io.Serializable;
+import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.annotations.TableField;
+
+@TableName("driver")
+public class Driver implements Serializable{
+	
+		
+	/**
+	 * 属性描述:id
+	 */
+	@TableField(value="id",exist=true)
+	java.lang.Integer id;
+	
+	/**
+	 * 属性描述:user表用户id
+	 */
+	@TableField(value="attendance_id",exist=true)
+	java.lang.Long attendanceId;
+	
+	/**
+	 * 属性描述:标签信息，支持多个，逗号分隔
+	 */
+	@TableField(value="tag",exist=true)
+	java.lang.String tag;
+	
+	/**
+	 * 属性描述:备注，支持多个
+	 */
+	@TableField(value="remark",exist=true)
+	java.lang.String remark;
+	/**
+	 * 属性描述:0=正常 1=删除
+	 */
+	@TableField(value="deleted",exist=true)
+	java.lang.Boolean deleted;
+
+	public Boolean getDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(Boolean deleted) {
+		this.deleted = deleted;
+	}
+
+	public java.lang.Integer getId(){
+		return this.id;
+	}
+	
+	public void setId(java.lang.Integer id){
+		this.id=id;
+	}
+	
+	
+	public java.lang.Long getAttendanceId(){
+		return this.attendanceId;
+	}
+	
+	public void setAttendanceId(java.lang.Long attendanceId){
+		this.attendanceId=attendanceId;
+	}
+	
+	
+	public java.lang.String getTag(){
+		return this.tag;
+	}
+	
+	public void setTag(java.lang.String tag){
+		this.tag=tag;
+	}
+	
+	
+	public java.lang.String getRemark(){
+		return this.remark;
+	}
+	
+	public void setRemark(java.lang.String remark){
+		this.remark=remark;
+	}
+	
+	
+	
+	
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+			sb.append(", id=").append(id);			
+			sb.append(", attendanceId=").append(attendanceId);			
+			sb.append(", tag=").append(tag);			
+			sb.append(", remark=").append(remark);			
+        sb.append("]");
+        return sb.toString();
+    }
+
+   
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) {
+            return true;
+        }
+        if (that == null) {
+            return false;
+        }
+        if (getClass() != that.getClass()) {
+            return false;
+        }
+        Driver other = (Driver) that;
+        boolean flag = true;
+        return  flag
+        		&&(this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))		
+				        		&&(this.getAttendanceId() == null ? other.getId() == null : this.getAttendanceId().equals(other.getAttendanceId()))		
+				        		&&(this.getTag() == null ? other.getId() == null : this.getTag().equals(other.getTag()))		
+				        		&&(this.getRemark() == null ? other.getId() == null : this.getRemark().equals(other.getRemark()))		
+				;
+    }
+
+  
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());		
+		        result = prime * result + ((getAttendanceId() == null) ? 0 : getAttendanceId().hashCode());		
+		        result = prime * result + ((getTag() == null) ? 0 : getTag().hashCode());		
+		        result = prime * result + ((getRemark() == null) ? 0 : getRemark().hashCode());		
+		;
+        return result;
+    }
+
+}

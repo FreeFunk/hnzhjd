@@ -1,0 +1,43 @@
+server:
+  port: 8099
+mybatis:
+  mapper-locations: classpath:mapper/sys/*.xml,classpath:mapper/zhjd/*.xml
+mybatis-plus:
+  global-config:
+    db-config:
+      db-type: MYSQL
+spring:
+  datasource:
+    name: datasource
+    url:  jdbc:mysql://47.92.226.229:3306/reception?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: reception
+    password: rece@pTion0412
+    tomcat:
+      max-active: 5
+      min-idle: 2
+      max-idle: 5
+      initial-size: 2
+      test-on-borrow: true
+      test-on-return: false
+      max-wait: 3000
+  aop:
+    proxy-target-class: true
+    auto: true
+
+controller.scanPackage: com.edgedo.sys.controller
+#rsa公钥
+JwtRsaSecKey.rsaPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw8HsyNi0eAB5iZUnkniEZd+MitQ3LcTvYFVMbvUhZ4/B1BnjigqHKhr7KNQj6/LXLcjbPLxVHv7/j0NRyxcvL+LQ/ULfUQUjICEIBlesItyH/Vuqj33xFbxONX7iU4/9Of70q3lBixLQZb5/ELbntSbg5HY5hv6wPWUB7lS/iTofh1pEeN2Yl1OvceHUTkj4DlQnVCGy/7s/in1dHeHc+5Wd2F0wBiuJ8MICp2a3R+iQbs/x0itQ4e3SsFP5GP49XTYnfVZURhfrIdNWNbPGHmKX8ei9xS6GikzCfoZ2FwOxHyJ4XXxsgIGKVdl+vvQ7FY3I4vzX4WuJ7PfO/QbiZQIDAQAB
+#rsa私钥
+JwtRsaSecKey.rsaPrivateKey: MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDDwezI2LR4AHmJlSeSeIRl34yK1DctxO9gVUxu9SFnj8HUGeOKCocqGvso1CPr8tctyNs8vFUe/v+PQ1HLFy8v4tD9Qt9RBSMgIQgGV6wi3If9W6qPffEVvE41fuJTj/05/vSreUGLEtBlvn8Qtue1JuDkdjmG/rA9ZQHuVL+JOh+HWkR43ZiXU69x4dROSPgOVCdUIbL/uz+KfV0d4dz7lZ3YXTAGK4nwwgKnZrdH6JBuz/HSK1Dh7dKwU/kY/j1dNid9VlRGF+sh01Y1s8YeYpfx6L3FLoaKTMJ+hnYXA7EfInhdfGyAgYpV2X6+9DsVjcji/Nfha4ns9879BuJlAgMBAAECggEBALcJNjs91NB3sSxhmFSt9y3B7olIkCdtgl1SpFsDPS62DggiBM1ntqY6AClW4heWQnh+2+9YMUcAKzhrO6lnjil6LOsBggkhgoxiFjzH8R3Pkh/le/8bRTaLkZ0XfMuhUKbPqzpB8HT3LIBVtD2Op+yL46/6kyOUNHnTXhDYkRbe7OkMS+JwH1yXHrLd9g+O79tYRFhHsEdhopwvH7kb7cG+Vu9K3Su3qhbfqNm9C/VD5PNkmcC7Cwr8b5kZn5dHrlYasEfdFkzKT8sgBHTqD8EyMmQMGEtKQzulTsHUw6Ygs1usCZGZJabQKuOPMAvGiLqhbVXDoUq2u1AaAcJYt0ECgYEA6V/bwD2ixPXZyRviDYJ8roTe+XzHgJat6f3J81F0C/AIGndHXl5VGrceUMcDvxzpfRGxmFA3VQlY764WKqXEh9traW4nQx7IJXASKCLyXeQ+dKO7LqNL1bQp9wr75k1nQLqafUAATZn9f1wjp9R89gB+lWMU74Ks9AVFYbmUXykCgYEA1rxy1xakQWiuyKhhWLueKwfD55QkQr2ZsitpfmbjP2Mu9gh4FZ/DSwtPW2A9pbL/TOKSgm04VwcqOECK0sQbv4801lRPd+qsluxijqYmequmJAgB8VPBoFwtw34FWI4LU0GId/zUP3P/eDTMk3vsCLF0VasIQVhNaXwGNOWOXN0CgYAU6Ah4pUzilh+ne375tNnUjISpFvuMUnNMBfdEe+SIeT1QmaTkGFFJbmQh2mJEiaOFF8OwIGeEj6zO8+p6cZU0knyB2mNcCPLnH64QuGi77omFy3EmUWymvVgREIPWctKwIsdaNxSP3x6tfSSYkVmMdCji2xhyCGPUDHDVu1lGWQKBgQC/cJRFc3cOpUAlvg/DZsi0/iBGRgkpwxTSBefv+9Qe/9KvH4/HX35hWfzurtdm8TSwG9KYGr0+wTF/ovLgwlsmpYpqhhGvC/XAO5AGMtRdSsg8mTL6LjySNXvLLH+hmkk4eVUr+6hRxZ19Uj0MQ0+D1Iitk2QxtYKWRy7VW85WtQKBgQDIAHx5ebso/tJ7EQ8m+26bRGKuuRKk9ruTjajP+qcZ/LPvtWyRCWTWTyGIICURuOSoi/ptKOdawAzIR1blG1HjReerOnQz/jC71tTKq+Qsy0ezHu3uq3xt5EXZj8HOc24yH6zZiFI9I/uvXlSd9nrDyPfCiIBa5/T//105RYts9w==
+#jwt token秘钥
+JwtRsaSecKey.jwtSecretkey: 6a4c9416da35432ca5ff612ce88eb6de
+
+cloudfileconfig:
+ type: 2
+ aliyun-domain:
+ aliyun-prefix:
+ aliyun-end-point:
+ aliyun-access-key-id:
+ aliyun-access-key-secret:
+ aliyun-bucket-name:

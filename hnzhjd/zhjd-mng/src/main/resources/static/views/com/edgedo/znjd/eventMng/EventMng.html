@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>标题</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="../../../../../layuiadmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../../../../layuiadmin/style/admin.css" media="all">
+</head>
+<body>
+
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <h1 style="width: 100%;text-align: center">接机</h1>
+        </div>
+        <div class="layui-col-md12">
+            <div class="layui-card layui-col-md6">
+                <div class="layui-card-header">人员信息管理</div>
+                <div class="layui-card-body">
+                    <div class="layui-carousel layadmin-carousel layadmin-backlog" lay-anim="" lay-indicator="inside" lay-arrow="none" style="width: 100%; height: 280px;">
+                        <div carousel-item="">
+                            <ul class="layui-row layui-col-space10 layui-this">
+                                <li class="layui-col-xs6">
+                                    <a lay-href="app/content/comment.html" class="layadmin-backlog-body">
+                                        <h3><i class="layui-icon layui-icon-user"></i>&nbsp;&nbsp;工作人员</h3>
+                                        <p><cite>66</cite></p>
+                                    </a>
+                                </li>
+                                <li class="layui-col-xs6">
+                                    <a lay-href="app/forum/list.html" class="layadmin-backlog-body">
+                                        <h3><i class="layui-icon layui-icon-user"></i>司机</h3>
+                                        <p><cite>12</cite></p>
+                                    </a>
+                                </li>
+                                <li class="layui-col-xs6">
+                                    <a lay-href="template/goodslist.html" class="layadmin-backlog-body">
+                                        <h3><i class="layui-icon layui-icon-user"></i>来访人员信息</h3>
+                                        <p><cite>99</cite></p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-card  layui-col-md6">
+            <div class="layui-card-header">航班、车辆管理</div>
+            <div class="layui-card-body">
+                <div class="layui-carousel layadmin-carousel layadmin-backlog" lay-anim="" lay-indicator="inside" lay-arrow="none" style="width: 100%; height: 280px;">
+                    <div carousel-item="">
+                        <ul class="layui-row layui-col-space10 layui-this">
+                            <li class="layui-col-xs6">
+                                <a data-type="pickupBtn" class="layadmin-backlog-body">
+                                    <h3>航班/乘车信息</h3>
+                                    <p><cite id="pickupCount"></cite></p>
+                                </a>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <a data-type="carBtn" class="layadmin-backlog-body">
+                                    <h3><i class="layui-icon layui-icon-room"></i>&nbsp;&nbsp;车辆安排</h3>
+                                    <p><cite id="carArrangeCount"></cite></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-card  layui-col-md6">
+            <div class="layui-card-header">房间、用餐安排</div>
+            <div class="layui-card-body">
+                <div class="layui-carousel layadmin-carousel layadmin-backlog" lay-anim="" lay-indicator="inside" lay-arrow="none" style="width: 100%;">
+                    <div carousel-item="">
+                        <ul class="layui-row layui-col-space10 layui-this">
+                            <li class="layui-col-xs6">
+                                <a data-type="roomBtn" class="layadmin-backlog-body">
+                                    <h3>入住房间安排</h3>
+                                    <p><cite id="roomArrangeCount"></cite></p>
+                                </a>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <a data-type="resBtn" class="layadmin-backlog-body">
+                                    <h3>用餐安排</h3>
+                                    <p><cite id="resArrangeCount"></cite></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-card  layui-col-md6">
+            <div class="layui-card-header">会议室安排</div>
+            <div class="layui-card-body">
+                <div class="layui-carousel layadmin-carousel layadmin-backlog" lay-anim="" lay-indicator="inside" lay-arrow="none" style="width: 100%;">
+                    <div carousel-item="" style="height: 90px;">
+                        <ul class="layui-row layui-col-space10 layui-this">
+                            <li class="layui-col-xs6">
+                                <a data-type="mtBtn" class="layadmin-backlog-body">
+                                    <h3>会议室安排</h3>
+                                    <p><cite id="mtArrangeCount"></cite></p>
+                                </a>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <a data-type="defineBtn" class="layadmin-backlog-body">
+                                    <h3>自定义安排</h3>
+                                    <p><cite id="defineCount"></cite></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="../../../../../layuiadmin/layui/layui.js"></script>
+<script>
+        layui.config({
+            base: '../../../../../layuiadmin/' //静态资源所在路径
+        }).extend({
+            index:'lib/index',
+            common:'common'
+        }).use(['index','table', 'form','common'], function(exports){
+            var $ = layui.$
+                ,table = layui.table
+                ,common = layui.common
+                ,admin = layui.admin
+                ,form = layui.form;
+
+            debugger
+            var eventId = getQueryVariable("id");
+            var param = {"eventId":eventId};
+            admin.req({
+                url:layui.setter.basePath +'/admin/event/detailCountByEventId.jsn',
+                data:param,
+                method:'post',
+                success:function(data){
+                    if(data.success){
+                        $("#pickupCount").html(data.data[0]);
+                        $("#carArrangeCount").html(data.data[1]);
+                        $("#mtArrangeCount").html(data.data[2]);
+                        $("#roomArrangeCount").html(data.data[3]);
+                        $("#resArrangeCount").html(data.data[4]);
+                        $("#defineCount").html(data.data[5]);
+                    }
+                }
+            })
+
+            //点击事件
+            var active = {
+                pickupBtn: function(){
+                    parent.layui.index.openTabsPage('views/com/edgedo/znjd/pickupArrange/PickupArrangeList.html?eventId='+eventId,'航班/车辆管理');
+                },
+                carBtn: function(){
+                    parent.layui.index.openTabsPage('views/com/edgedo/znjd/carArrange/CarArrangeList.html?eventId='+eventId,'车辆安排');
+                },
+                roomBtn: function(){
+                    parent.layui.index.openTabsPage('views/com/edgedo/znjd/roomArrange/RoomArrangeList.html?eventId='+eventId,'房间安排');
+                },
+                resBtn: function(){
+                    parent.layui.index.openTabsPage('views/com/edgedo/znjd/restaurantArrange/RestaurantArrangeList.html?eventId='+eventId,'餐厅安排');
+                },
+                mtBtn: function(){
+                    parent.layui.index.openTabsPage('views/com/edgedo/znjd/meetingRoomArrange/MeetingRoomArrangeList.html?eventId='+eventId,'会议室安排');
+                },
+                defineBtn: function(){
+                    parent.layui.index.openTabsPage('views/com/edgedo/znjd/defineArrange/DefineArrangeList.html?eventId='+eventId,'自定义安排');
+                }
+            }
+            //绑定点击事件
+            $('.layadmin-backlog-body').on('click', function(){
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+
+        });
+
+        function getQueryVariable(variable){
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i=0;i<vars.length;i++) {
+                var pair = vars[i].split("=");
+                if(pair[0] == variable){return pair[1];}
+            }
+            return(false);
+        }
+
+</script>
+</body>
+</html>
+

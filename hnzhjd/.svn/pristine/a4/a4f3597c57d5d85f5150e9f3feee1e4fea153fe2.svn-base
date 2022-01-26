@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.edgedo.sys.mapper.RoomArrangeDetailMapper" >
+   
+   
+    <resultMap id="BaseResultMap" type="com.edgedo.sys.entity.RoomArrangeDetail" >
+			<id column="id" property="id"/>
+			<result column="arrange_id" property="arrangeId"/>
+			<result column="room_number" property="roomNumber"/>
+			<result column="attendance_id" property="attendanceId"/>
+			<result column="remark" property="remark"/>
+			<result column="telephone" property="telephone"/>
+			<result column="date" property="date"/>
+			<result column="deleted" property="deleted"/>
+    </resultMap>
+   
+    <resultMap id="BaseResultViewMap" type="com.edgedo.sys.queryvo.RoomArrangeDetailView" extends="BaseResultMap">
+    
+    </resultMap>
+  
+  
+  <!-- ******* 新增字段请修改这里  ******  -->
+  <sql id="Base_Column_List">
+	 id, arrange_id, room_number, attendance_id, remark, telephone, date,deleted
+  </sql>
+  
+  <!-- ******* 利用好这里的动态查询条件  ******  -->
+  <sql id="where">
+  	<where>
+		deleted!=1
+		<if test='queryObj != null and  queryObj.id != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.id)'>
+			AND  id = #{queryObj.id}
+		</if>
+		<if test='queryObj != null and  queryObj.arrangeId != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.arrangeId)'>
+			AND  arrange_id = #{queryObj.arrangeId}
+		</if>
+		<if test='queryObj != null and  queryObj.attendanceId != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.attendanceId)'>
+			AND  attendance_id = #{queryObj.attendanceId}
+		</if>
+  	</where>
+  	
+  </sql>
+  
+  <!-- ******* 排序判断  ******  
+  <sql id="orderBy">
+  	<if test="orderBy != null and orderBy!= '' ">
+  		order by  ${orderBy}
+  	</if>
+  </sql>-->
+  
+  
+  <!-- 分页条件查询  -->
+  <select id="listPage" parameterType="com.edgedo.sys.queryvo.RoomArrangeDetailQuery" resultMap="BaseResultViewMap">
+  		select <include refid="Base_Column_List"/> from room_arrange_detail 
+  		<include refid="where"/>
+  </select>
+  
+   <!-- 不分页条件查询  -->
+  <select id="listByObj" parameterType="com.edgedo.sys.queryvo.RoomArrangeDetailQuery" resultMap="BaseResultViewMap">
+  		select <include refid="Base_Column_List"/> from room_arrange_detail 
+  		<include refid="where"/>
+  </select>
+  
+  
+</mapper>

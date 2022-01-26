@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新增</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="../../../../../layuiadmin/layui/css/layui.css" media="all">
+</head>
+<body>
+
+<div class="layui-form" lay-filter="MeetingRoomArrange-form" id="MeetingRoomArrange-form" style="padding: 20px 30px 0 0;">
+        <div class="layui-form-item">
+            <label class="layui-form-label">会议开始时间</label>
+            <div class="layui-input-block">
+                <input type="text" name="useDate" id="useDate" lay-verify="required" placeholder="请输入会议开始时间" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">会议结束时间</label>
+            <div class="layui-input-block">
+                <input type="text" name="endDate" id="endDate" lay-verify="required" placeholder="请输入会议结束时间" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">会议场所id</label>
+            <div class="layui-input-block">
+                <input type="text" name="meetingRoomId" lay-verify="required|number" placeholder="请输入会议场所id" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">安保负责人。对应attendance_id</label>
+            <div class="layui-input-block">
+                <input type="text" name="guardAttendanceId" lay-verify="required|number" placeholder="请输入安保负责人。对应attendance_id" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">接待负责人。对应attendance_id</label>
+            <div class="layui-input-block">
+                <input type="text" name="chargerAttendanceId" lay-verify="required|number" placeholder="请输入接待负责人。对应attendance_id" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">会议议程的文档地址（传一个word文档）</label>
+            <div class="layui-input-block">
+                <input type="text" name="agendaDoc" lay-verify="required" placeholder="请输入会议议程的文档地址（传一个word文档）" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">参会人员概要。逗号分隔的文本。备注型内容，与其它数据无关联，编辑会议时手输</label>
+            <div class="layui-input-block">
+                <input type="text" name="participantBrief" lay-verify="required" placeholder="请输入参会人员概要。逗号分隔的文本。备注型内容，与其它数据无关联，编辑会议时手输" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">参会单位。逗号分隔的文本。备注型内容，与其它数据无关联，编辑会议时手输</label>
+            <div class="layui-input-block">
+                <input type="text" name="participantUnits" lay-verify="required" placeholder="请输入参会单位。逗号分隔的文本。备注型内容，与其它数据无关联，编辑会议时手输" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">参会人员，逗号分隔的attendance_id</label>
+            <div class="layui-input-block">
+                <input type="text" name="attendees" lay-verify="required" placeholder="请输入参会人员，逗号分隔的attendance_id" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">图片：会议人员座位安排图（编辑会议时上传）。后期这个字段（或者换用一个新的字段）用来保存当前会议的实际座位分布数据</label>
+            <div class="layui-input-block">
+                <input type="text" name="meetingPlacement" lay-verify="required" placeholder="请输入图片：会议人员座位安排图（编辑会议时上传）。后期这个字段（或者换用一个新的字段）用来保存当前会议的实际座位分布数据" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">来访id</label>
+            <div class="layui-input-block">
+                <input type="text" name="receptionId" lay-verify="required|number" placeholder="请输入来访id" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">活动id</label>
+            <div class="layui-input-block">
+                <input type="text" name="eventId" lay-verify="required|number" placeholder="请输入活动id" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+   <!-- <div class="layui-form-item">
+        <label class="layui-form-label">省名</label>
+        <div class="layui-input-inline">
+            <input type="text" name="name" lay-verify="required" placeholder="请输入省名" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">区域</label>
+        <div class="layui-input-inline">
+            <input type="text" name="area" lay-verify="required" placeholder="请输入区域" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">排序号</label>
+        <div class="layui-input-inline">
+            <input type="text" name="orderNumber" lay-verify="required" placeholder="请输入区域" autocomplete="off" class="layui-input">
+        </div>
+    </div>-->
+    <div class="layui-form-item layui-hide">
+        <input type="button" lay-submit lay-filter="MeetingRoomArrange-form-submit" id="MeetingRoomArrange-form-submit" value="确认添加">
+    </div>
+</div>
+
+<script src="../../../../../layuiadmin/layui/layui.js"></script>
+<script>
+        layui.config({
+            base: '../../../../../layuiadmin/' //静态资源所在路径
+        }).extend({
+            index: 'lib/index' //主入口模块
+        }).use(['index', 'form','laydate'], function(){
+            var $ = layui.$
+                ,laydate = layui.laydate
+                ,admin  = layui.admin
+                ,form = layui.form;
+
+            //监听提交
+            form.on('submit(MeetingRoomArrange-form-submit)', function(data){
+                var field = data.field; //获取提交的字段
+                var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                //提交 Ajax 成功后，关闭当前弹层并重载表格
+                admin.req({
+                    url:layui.setter.basePath +'/admin/meetingRoomArrange/saveOrUpdate.jsn',
+                    data:field,
+                    method:"post",
+                    success:function (data) {
+                        parent.layui.table.reload('MeetingRoomArrange-list'); //重载表格
+                        parent.layer.close(index); //再执行关闭
+                        parent.layer.msg('添加成功', {
+                            icon: 1
+                        });
+                    },
+                });
+
+            });
+            laydate.render({
+                elem: '#useDate', //指定元素
+                type:'datetime'
+            });
+            laydate.render({
+                elem: '#endDate', //指定元素
+                type:'datetime'
+            });
+        })
+</script>
+</body>
+</html>

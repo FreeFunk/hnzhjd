@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>编辑</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="../../../../../layuiadmin/layui/css/layui.css" media="all">
+</head>
+<body>
+
+<div class="layui-form" lay-filter="Attendance-form" id="Attendance-form" style="padding: 20px 30px 0 0;">
+                <div class="layui-form-item layui-hide">
+                    <label class="layui-form-label">id</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="id" id="id" lay-verify="required" placeholder="请输入id" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">姓名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="name" lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">性别</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="gender" lay-verify="required" placeholder="请输入性别" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">手机</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="telephone" lay-verify="required" placeholder="请输入手机" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">访问id</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="receptionId" lay-verify="required" placeholder="请输入访问id" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">民族</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="nation" lay-verify="required" placeholder="请输入民族" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">职称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="jobTitle" lay-verify="required" placeholder="请输入职称" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">工作称谓</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="jobName" lay-verify="required" placeholder="请输入工作称谓" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="remark" lay-verify="required" placeholder="请输入备注" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">头像</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="portrait" lay-verify="required" placeholder="请输入头像" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">user表用户id</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="userId" lay-verify="required" placeholder="请输入user表用户id" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">级别,大的级别管小的级别</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="level" lay-verify="required" placeholder="请输入级别,大的级别管小的级别" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">分组名称。只针对来访人员</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="group" lay-verify="required" placeholder="请输入分组名称。只针对来访人员" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">来访人员 / 接待人员 / 陪同人员</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="type" lay-verify="required" placeholder="请输入来访人员 / 接待人员 / 陪同人员" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">人员名单显示顺序--此字段目前前段未详细使用，可提供简单文本录入即可</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="showOrder" lay-verify="required" placeholder="请输入人员名单显示顺序--此字段目前前段未详细使用，可提供简单文本录入即可" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">组织id</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="orgId" lay-verify="required" placeholder="请输入组织id" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">邮箱</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="email" lay-verify="required" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">身份证件号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="idCode" lay-verify="required" placeholder="请输入身份证件号" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">个性化欢迎语，针对不同用户可定制欢迎语</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="welcome" lay-verify="required" placeholder="请输入个性化欢迎语，针对不同用户可定制欢迎语" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">更新时间</label>
+                <div class="layui-input-block">
+                    <input type="text" name="updateTime" id="updateTime" lay-verify="required" placeholder="请输入更新时间" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">0=正常 1=删除</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="deleted" lay-verify="required" placeholder="请输入0=正常 1=删除" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+    <div class="layui-form-item layui-hide">
+        <input type="button" lay-submit lay-filter="Attendance-form-edit" id="Attendance-form-edit" value="确认编辑">
+    </div>
+</div>
+
+<script src="../../../../../layuiadmin/layui/layui.js"></script>
+<script>
+        layui.config({
+            base: '../../../../../layuiadmin/' //静态资源所在路径
+        }).extend({
+            index: 'lib/index', //主入口模块
+            $tool:'tool'
+        }).use(['index', 'form','$tool','laydate'], function(){
+
+            var $ = layui.$
+                ,$tool = layui.$tool
+                ,laydate = layui.laydate
+                ,admin = layui.admin
+                ,form = layui.form;
+
+            /*var queryArgs = $tool.getQueryParam();//获取查询参数
+            var id = queryArgs['id'];*/
+            //监听修改保存
+            form.on('submit(Attendance-form-edit)', function(data){
+                var field = data.field; //获取提交的字段
+                var index = parent.layer.getFrameIndex(window.name);//先得到当前iframe层的索引
+                admin.req({
+                    url:layui.setter.basePath +'/admin/attendance/saveOrUpdate.jsn',
+                    data:field,
+                    method:"post",
+                    success:function (data) {
+                        parent.layui.table.reload('Attendance-list'); //重载表格
+                        parent.layer.close(index); //再执行关闭
+                        parent.layer.msg('修改成功', {
+                            icon: 1
+                        });
+                    }
+                });
+            });
+
+            laydate.render({
+                elem: '#createTime', //指定元素
+                type:'datetime'
+            });
+            laydate.render({
+                elem: '#updateTime', //指定元素
+                type:'datetime'
+            });
+        })
+</script>
+</body>
+</html>

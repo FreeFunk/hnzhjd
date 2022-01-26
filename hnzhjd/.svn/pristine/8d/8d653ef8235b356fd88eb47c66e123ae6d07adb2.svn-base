@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.edgedo.sys.mapper.ReceptionMapper" >
+   
+   
+    <resultMap id="BaseResultMap" type="com.edgedo.sys.entity.Reception" >
+			<id column="id" property="id"/>
+			<result column="title" property="title"/>
+			<result column="org_name" property="orgName"/>
+			<result column="start_time" property="startTime"/>
+			<result column="end_time" property="endTime"/>
+			<result column="deleted" property="deleted"/>
+			<result column="org_id" property="orgId"/>
+			<result column="data_org_id" property="dataOrgId"/>
+    </resultMap>
+   
+    <resultMap id="BaseResultViewMap" type="com.edgedo.sys.queryvo.ReceptionView" extends="BaseResultMap">
+    
+    </resultMap>
+  
+  
+  <!-- ******* 新增字段请修改这里  ******  -->
+  <sql id="Base_Column_List">
+	 id, title, org_name, start_time, end_time, deleted, org_id,data_org_id
+  </sql>
+  
+  <!-- ******* 利用好这里的动态查询条件  ******  -->
+  <sql id="where">
+  	<where>
+			deleted!=1
+			<if test='queryObj != null and  queryObj.id != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.id)'>
+				AND  id = #{queryObj.id}
+			</if>
+			<if test='queryObj != null and  queryObj.startTime != null'>
+				AND  start_time = #{queryObj.startTime}
+			</if>
+			<if test='queryObj != null and  queryObj.endTime != null'>
+				AND  end_time = #{queryObj.endTime}
+			</if>
+			<if test='queryObj != null and  queryObj.orgId != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.orgId)'>
+				AND  org_id = #{queryObj.orgId}
+			</if>
+  	</where>
+  	
+  </sql>
+  
+  <!-- ******* 排序判断  ******  
+  <sql id="orderBy">
+  	<if test="orderBy != null and orderBy!= '' ">
+  		order by  ${orderBy}
+  	</if>
+  </sql>-->
+  
+  
+  <!-- 分页条件查询  -->
+  <select id="listPage" parameterType="com.edgedo.sys.queryvo.ReceptionQuery" resultMap="BaseResultViewMap">
+  		select <include refid="Base_Column_List"/> from reception 
+  		<include refid="where"/>
+  </select>
+  
+   <!-- 不分页条件查询  -->
+  <select id="listByObj" parameterType="com.edgedo.sys.queryvo.ReceptionQuery" resultMap="BaseResultViewMap">
+  		select <include refid="Base_Column_List"/> from reception 
+  		<include refid="where"/>
+  </select>
+  
+  
+</mapper>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.edgedo.sys.mapper.RestaurantMapper" >
+   
+   
+    <resultMap id="BaseResultMap" type="com.edgedo.sys.entity.Restaurant" >
+			<id column="id" property="id"/>
+			<result column="org_id" property="orgId"/>
+			<result column="name" property="name"/>
+			<result column="telephone" property="telephone"/>
+			<result column="address" property="address"/>
+			<result column="geo" property="geo"/>
+			<result column="remark" property="remark"/>
+			<result column="as_default" property="asDefault"/>
+			<result column="deleted" property="deleted"/>
+			<result column="floor_num" property="floorNum"/>
+			<result column="seating_capacity" property="seatingCapacity"/>
+			<result column="room_name" property="roomName"/>
+			<result column="res_photo" property="resPhoto"/>
+
+    </resultMap>
+   
+    <resultMap id="BaseResultViewMap" type="com.edgedo.sys.queryvo.RestaurantView" extends="BaseResultMap">
+    
+    </resultMap>
+  
+  
+  <!-- ******* 新增字段请修改这里  ******  -->
+  <sql id="Base_Column_List">
+	 id, org_id, name, telephone, address, geo, remark, as_default,deleted,floor_num,seating_capacity,room_name,res_photo
+  </sql>
+  
+  <!-- ******* 利用好这里的动态查询条件  ******  -->
+  <sql id="where">
+  	<where>
+		deleted!=1
+		<if test='queryObj != null and  queryObj.id != null '>
+			AND  id = #{queryObj.id}
+		</if>
+		<if test='queryObj != null and  queryObj.orgId != null '>
+			AND  org_id = #{queryObj.orgId}
+		</if>
+		<if test='queryObj != null and  queryObj.name != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.name)'>
+			AND  name like concat('%',#{queryObj.name},'%')
+		</if>
+		<if test='queryObj != null and  queryObj.telephone != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.telephone)'>
+			AND  telephone like concat('%',#{queryObj.telephone},'%')
+		</if>
+  	</where>
+  	
+  </sql>
+  
+  <!-- ******* 排序判断  ******  
+  <sql id="orderBy">
+  	<if test="orderBy != null and orderBy!= '' ">
+  		order by  ${orderBy}
+  	</if>
+  </sql>-->
+  
+  
+  <!-- 分页条件查询  -->
+  <select id="listPage" parameterType="com.edgedo.sys.queryvo.RestaurantQuery" resultMap="BaseResultViewMap">
+  		select <include refid="Base_Column_List"/> from restaurant 
+  		<include refid="where"/>
+  </select>
+  
+   <!-- 不分页条件查询  -->
+  <select id="listByObj" parameterType="com.edgedo.sys.queryvo.RestaurantQuery" resultMap="BaseResultViewMap">
+  		select <include refid="Base_Column_List"/> from restaurant 
+  		<include refid="where"/>
+  </select>
+
+	<!--  设置不默认 -->
+	<update id="updateAllNotDefault" parameterType="java.lang.Integer">
+		update restaurant set as_default=0 where org_id=#{orgId}
+	</update>
+
+	<!--  批量逻辑删除 -->
+	<update id="deleteByIdsLogic" parameterType="map" >
+		update restaurant set deleted=1 where id in
+		<foreach collection="ids" open="(" close=")" separator="," item="id">
+			#{id}
+		</foreach>
+	</update>
+  
+</mapper>

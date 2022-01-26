@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>编辑</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="../../../../../layuiadmin/layui/css/layui.css" media="all">
+</head>
+<body>
+
+<div class="layui-form" lay-filter="RoomArrange-form" id="RoomArrange-form" style="padding: 20px 30px 0 0;">
+                <div class="layui-form-item layui-hide">
+                    <label class="layui-form-label">id</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="id" id="id" lay-verify="required" placeholder="请输入id" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">安保人员的attendance_id</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="guardAttendanceId" lay-verify="required" placeholder="请输入安保人员的attendance_id" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">负责人的attendance_id</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="chargerAttendanceId" lay-verify="required" placeholder="请输入负责人的attendance_id" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">酒店id</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="hotelId" lay-verify="required" placeholder="请输入酒店id" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">接待访问id</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="receptionId" lay-verify="required" placeholder="请输入接待访问id" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">访问活动id</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="eventId" lay-verify="required" placeholder="请输入访问活动id" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">起始日期，毫秒</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="startDate" lay-verify="required" placeholder="请输入起始日期，毫秒" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">居住结束日期，毫秒</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="endDate" lay-verify="required" placeholder="请输入居住结束日期，毫秒" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+    <div class="layui-form-item layui-hide">
+        <input type="button" lay-submit lay-filter="RoomArrange-form-edit" id="RoomArrange-form-edit" value="确认编辑">
+    </div>
+</div>
+
+<script src="../../../../../layuiadmin/layui/layui.js"></script>
+<script>
+        layui.config({
+            base: '../../../../../layuiadmin/' //静态资源所在路径
+        }).extend({
+            index: 'lib/index', //主入口模块
+            $tool:'tool'
+        }).use(['index', 'form','$tool','laydate'], function(){
+
+            var $ = layui.$
+                ,$tool = layui.$tool
+                ,laydate = layui.laydate
+                ,admin = layui.admin
+                ,form = layui.form;
+
+            /*var queryArgs = $tool.getQueryParam();//获取查询参数
+            var id = queryArgs['id'];*/
+            //监听修改保存
+            form.on('submit(RoomArrange-form-edit)', function(data){
+                var field = data.field; //获取提交的字段
+                var index = parent.layer.getFrameIndex(window.name);//先得到当前iframe层的索引
+                admin.req({
+                    url:layui.setter.basePath +'/admin/roomArrange/saveOrUpdate.jsn',
+                    data:field,
+                    method:"post",
+                    success:function (data) {
+                        parent.layui.table.reload('RoomArrange-list'); //重载表格
+                        parent.layer.close(index); //再执行关闭
+                        parent.layer.msg('修改成功', {
+                            icon: 1
+                        });
+                    }
+                });
+            });
+
+        })
+</script>
+</body>
+</html>

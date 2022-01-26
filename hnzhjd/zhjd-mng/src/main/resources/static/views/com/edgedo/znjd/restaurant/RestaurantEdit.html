@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>编辑</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="../../../../../layuiadmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../../../../layuiadmin/css/app.css" media="all">
+</head>
+<body>
+
+<div class="layui-form" lay-filter="Restaurant-form" id="Restaurant-form" style="padding: 15px;background-color: #f2f2f2;">
+    <div class="layui-form-item layui-hide">
+        <label class="layui-form-label">id</label>
+        <div class="layui-input-block">
+            <input type="text" name="id" id="id" lay-verify="required" placeholder="请输入id" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-card">
+        <div class="layui-card-body layui-row layui-col-space10">
+            <div class="layui-col-md12">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">场所名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="name" lay-verify="required" placeholder="请输入场所名称" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md12">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">地址</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="address" lay-verify="required" placeholder="请输入地址" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">电话</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="telephone" lay-verify="required" placeholder="请输入电话" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">经纬度</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="geo" lay-verify="required|varlatln" placeholder="请输入经纬度" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <div class="layui-col-md12">
+                            <input type="checkbox" name="asDefault" value="1" title="设置默认" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">图片地址</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="resPhoto" maxlength="300" lay-verify="" placeholder="请输入图片地址" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-card">
+        <div class="layui-card-body layui-row layui-col-space10">
+            <div class=" layui-col-xs6 layui-col-sm6 layui-col-md6">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">包间</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="roomName" lay-verify="required" placeholder="包间" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">容纳人数</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="seatingCapacity" lay-verify="required|varint" placeholder="人数" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">楼层</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="floorNum" maxlength="3" lay-verify="required|varint" placeholder="楼层数" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="layui-card">
+        <div class="layui-card-body layui-row layui-col-space10">
+            <div class="layui-form-item" style="margin-bottom: 7px;">
+                <label class="layui-form-label">备注</label>
+                <div class="layui-input-block">
+                    <input type="hidden" class="layui-input" name="remark" id="remark-submit-id">
+                    <input type="text" id="remark-input-id"  style="width: 85%;display: inline-block;" placeholder="请输入备注" autocomplete="off" class="layui-input">
+                    <button class="layui-btn layui-btn-normal" data-type="addRemark" style="margin-top: -2px;padding: 0 14px;">+</button>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">&nbsp;</label>
+                <div class="layui-input-block">
+                    <div class="layui-card" id="remark-container">
+                        <!-- <div class="remark-item">
+                             <div class="layui-col-xs12 layui-col-sm12 layui-col-md12 remark-content">
+                                 备注内容
+                             </div>
+                             <div class="remark-btn right-top">
+                                 <i class="layui-icon layui-icon-close-fill"></i>
+                             </div>
+                         </div>-->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-hide">
+        <input type="button" lay-submit lay-filter="Restaurant-form-edit" id="Restaurant-form-edit" value="确认编辑">
+    </div>
+</div>
+
+<script src="../../../../../layuiadmin/layui/layui.js"></script>
+<script>
+        layui.config({
+            base: '../../../../../layuiadmin/' //静态资源所在路径
+        }).extend({
+            index: 'lib/index', //主入口模块
+            $tool:'tool'
+        }).use(['index', 'form','$tool','laydate'], function(){
+            var laytpl = layui.laytpl;
+            var $ = layui.$
+                ,$tool = layui.$tool
+                ,laydate = layui.laydate
+                ,admin = layui.admin
+                ,form = layui.form;
+            var remarkArr = [];
+            setTimeout(function(){
+                var remk = $('#remark-submit-id').val();
+                remarkArr = remk.split("@@");
+                freshRemarkList();
+            },100)
+            form.verify({
+                varint: function(value, item){ //value：表单的值、item：表单的DOM对象
+                    if(!new RegExp("^(-?)(0|[1-9][0-9]*)$").test(value)){
+                        return '请输入100以内整数';
+                    }
+                },
+                varlatln: function(value, item){ //value：表单的值、item：表单的DOM对象
+                    if(!new RegExp("-?((0|1?[0-7]?[0-9]?)(([.][0-9]{1,4})?)|180(([.][0]{1,4})?)),-?((0|[1-8]?[0-9]?)(([.][0-9]{1,5})?)|90(([.][0]{1,5})?))").test(value)){
+                        return '请输入正确的经纬度如：180.333,39.111';
+                    }
+                }
+
+            });
+            /*var queryArgs = $tool.getQueryParam();//获取查询参数
+            var id = queryArgs['id'];*/
+            //监听修改保存
+            form.on('submit(Restaurant-form-edit)', function(data){
+                var field = data.field; //获取提交的字段
+                var index = parent.layer.getFrameIndex(window.name);//先得到当前iframe层的索引
+                admin.req({
+                    url:layui.setter.basePath +'/admin/restaurant/saveOrUpdate.jsn',
+                    data:field,
+                    method:"post",
+                    success:function (data) {
+                        parent.layui.table.reload('Restaurant-list'); //重载表格
+                        parent.layer.close(index); //再执行关闭
+                        parent.layer.msg('修改成功', {
+                            icon: 1
+                        });
+                    }
+                });
+            });
+
+            var active = {
+                //批量删除
+                addRemark: function(){
+                    var text = $('#remark-input-id').val();
+                    if(text==null || text.length==0){
+                        layer.msg('请填写备注内容', {
+                        });
+                    }else{
+                        //判断备注是否已经存在
+                        var arrIndex = findRemark(text);
+                        if(arrIndex>=0){
+                            layer.msg('备注已存在', {
+                            });
+                            return;
+                        }
+                        remarkArr.push(text);
+                        freshRemarkList();
+                        $('#remark-input-id').val('');
+                    }
+
+                }
+            }
+            //绑定点击事件
+            $('.layui-btn').on('click', function(){
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+
+
+
+            //刷新
+            function freshRemarkList(){
+                var tpl = "{{#  layui.each(d.list, function(index, item){ }}" +
+                    "                    <div class=\"remark-item layui-col-xs11 layui-col-sm11 layui-col-md11\">" +
+                    "                        <div class=\"layui-col-xs12 layui-col-sm12 layui-col-md12 remark-content\">" +
+                    "                            {{item}}" +
+                    "                        </div>" +
+                    "                        <div class=\"remark-btn right-top\" onclick='deleteRemark({{index}})'>" +
+                    "                            <i class=\"layui-icon layui-icon-close-fill\"></i>" +
+                    "                        </div>" +
+                    "                    </div>" +
+                    "  {{#  }); }}";
+                var temData ={
+                    list:remarkArr
+                }
+                laytpl(tpl).render(temData, function(html){
+                    $("#remark-container").html(html);
+                });
+                var remarkText = '';
+                for(var i=0;i<remarkArr.length;i++){
+                    if(i==remarkArr.length-1){
+                        remarkText += remarkArr[i];
+                    }else{
+                        remarkText += remarkArr[i]+"@@";
+                    }
+                }
+                $('#remark-submit-id').val(remarkText);
+            }
+
+            window.deleteRemark = function(i){
+                remarkArr.splice(i);
+                freshRemarkList();
+            }
+
+            /**
+             * 找到备注的索引
+             * @param text
+             * @returns {number}
+             */
+            function findRemark(text){
+                for(var i=0;i<remarkArr.length;i++){
+                    var temText = remarkArr[i];
+                    if(temText==text){
+                        return i;
+                    }
+                }
+                return -1;
+            }
+
+
+        })
+</script>
+</body>
+</html>

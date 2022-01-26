@@ -1,0 +1,134 @@
+package com.edgedo.sys.controller;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.edgedo.common.base.BaseController;
+import com.edgedo.sys.entity.Org;
+import com.edgedo.sys.entity.SysCity;
+import com.edgedo.sys.queryvo.OrgQuery;
+import com.edgedo.sys.queryvo.OrgView;
+import com.edgedo.sys.service.OrgService;
+import com.edgedo.sys.service.SysCityService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+
+@Api(tags = "Org")
+@Controller
+@RequestMapping("/admin/org")
+public class OrgController extends BaseController{
+	
+	@Autowired
+	private OrgService service;
+	@Autowired
+	private SysCityService sysCityService;
+	
+	/**
+	 * 分页查询
+	 * @param query
+	 * @return
+	 */
+	@ApiOperation(value = "分页查询Org", notes = "分页查询Org")
+	@ApiImplicitParam(name = "access-token", value = "用户登录秘钥", paramType = "header", required = true, dataType = "String")
+	@RequestMapping(value = "/listpage",method = RequestMethod.POST)
+	public ModelAndView listpage(@ModelAttribute OrgQuery query){
+		ModelAndView modelAndView = new ModelAndView();
+		service.listPage(query);
+		buildResponse(modelAndView,query);
+		return modelAndView;
+	}
+
+	/**
+	 * 查询所有组织机构
+	 * @return
+	 */
+	@ApiOperation(value = "查询所有组织机构", notes = "查询所有组织机构")
+	@ApiImplicitParam(name = "access-token", value = "用户登录秘钥", paramType = "header", required = true, dataType = "String")
+	@RequestMapping(value = "/listAll",method = RequestMethod.POST)
+	public ModelAndView listAll(){
+		ModelAndView modelAndView = new ModelAndView();
+		List<OrgView> list = service.listAll();
+		buildResponse(modelAndView,list);
+		return modelAndView;
+	}
+
+
+	
+
+	/**
+	 * 新增修改
+	 * @param voObj
+	 * @return
+	 */
+	@ApiOperation(value = "新增修改Org", notes = "新增修改Org")
+	@ApiImplicitParam(name = "access-token", value = "用户登录秘钥", paramType = "header", required = true, dataType = "String")
+	@RequestMapping(value = "/saveOrUpdate",method = RequestMethod.POST)
+	public ModelAndView saveOrUpdate(Org voObj){
+		ModelAndView modelAndView = new ModelAndView();
+		String errMsg = "";
+		Integer id = voObj.getId();
+		//查询城市和省份信息
+		String cityId = voObj.getCityId();
+		SysCity sysCity = sysCityService.loadById(cityId);
+		voObj.setCity(sysCity.getName());
+		voObj.setProvince(sysCity.getProvinceNane());
+		voObj.setProvinceId(sysCity.getProvinceId());
+		if(id==null){
+			voObj.setDeleted(false);
+			errMsg = service.insert(voObj);
+		}else{
+			errMsg = service.update(voObj);
+		}
+		if(errMsg!=null && !errMsg.equals("")){
+			buildErrorResponse(modelAndView, errMsg);
+		}else{
+			buildResponse(modelAndView);
+		}
+		return modelAndView;
+	}
+	
+	
+	/**
+	 * 批量删除
+	 * @param ids
+	 * @return
+	 */
+	@ApiOperation(value = "根据ID批量删除Org", notes = "根据ID批量删除Org")
+	@ApiImplicitParam(name = "access-token", value = "用户登录秘钥", paramType = "header", required = true, dataType = "String")
+	@RequestMapping(value = "/deleteByIds",method = RequestMethod.POST)
+	public ModelAndView delete(String ids){
+		ModelAndView modelAndView = new ModelAndView();
+		String[] arr = ids.split(",");
+		List<String> list = new ArrayList<String>();
+		for(String str : arr){
+			list.add(str);
+		}
+		service.deleteByIdsLogic(list);
+		return buildResponse(modelAndView);
+	}
+	
+	
+	/**
+	 * 根据主键加载
+	 * @param id
+	 * @return
+	 */
+	@ApiOperation(value = "根据ID加载Org", notes = "根据ID加载Org")
+	@ApiImplicitParam(name = "access-token", value = "用户登录秘钥", paramType = "header", required = true, dataType = "String")
+	@RequestMapping(value = "/loadById",method = RequestMethod.POST)
+	public ModelAndView  loadById(Integer id){
+		ModelAndView modelAndView = new ModelAndView();
+		return buildResponse(modelAndView, service.loadById(id));
+	}
+	
+	
+}

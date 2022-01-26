@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.edgedo.sys.mapper.PickupArrangeMapper" >
+   
+   
+    <resultMap id="BaseResultMap" type="com.edgedo.sys.entity.PickupArrange" >
+			<id column="id" property="id"/>
+			<result column="from_station" property="fromStation"/>
+			<result column="end_station" property="endStation"/>
+			<result column="start_city" property="startCity"/>
+			<result column="end_city" property="endCity"/>
+			<result column="start_time" property="startTime"/>
+			<result column="end_time" property="endTime"/>
+			<result column="details" property="details"/>
+			<result column="create_time" property="createTime"/>
+			<result column="update_time" property="updateTime"/>
+			<result column="total_times" property="totalTimes"/>
+			<result column="way" property="way"/>
+			<result column="flight_no" property="flightNo"/>
+			<result column="visitors" property="visitors"/>
+			<result column="week_day" property="weekDay"/>
+			<result column="reception_id" property="receptionId"/>
+			<result column="event_id" property="eventId"/>
+			<result column="deleted" property="deleted"/>
+    </resultMap>
+   
+    <resultMap id="BaseResultViewMap" type="com.edgedo.sys.queryvo.PickupArrangeView" extends="BaseResultMap">
+    
+    </resultMap>
+  
+  
+  <!-- ******* 新增字段请修改这里  ******  -->
+  <sql id="Base_Column_List">
+	 id, from_station, end_station, start_city, end_city, start_time, end_time, details, create_time, update_time, total_times, way, flight_no, visitors, week_day, reception_id, event_id, deleted
+  </sql>
+  
+  <!-- ******* 利用好这里的动态查询条件  ******  -->
+  <sql id="where">
+  	<where>
+				<if test='queryObj != null and  queryObj.id != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.id)'>
+					AND  id = #{queryObj.id}
+				</if>
+				<if test='queryObj != null and  queryObj.totalTimes != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.totalTimes)'>
+					AND  total_times = #{queryObj.totalTimes}
+				</if>
+				<if test='queryObj != null and  queryObj.way != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.way)'>
+					AND  way = #{queryObj.way}
+				</if>
+				<if test='queryObj != null and  queryObj.receptionId != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.receptionId)'>
+					AND  reception_id = #{queryObj.receptionId}
+				</if>
+				<if test='queryObj != null and  queryObj.eventId != null'>
+					AND  event_id = #{queryObj.eventId}
+				</if>
+  	</where>
+  	
+  </sql>
+  
+  <!-- ******* 排序判断  ******  
+  <sql id="orderBy">
+  	<if test="orderBy != null and orderBy!= '' ">
+  		order by  ${orderBy}
+  	</if>
+  </sql>-->
+  
+  
+  <!-- 分页条件查询  -->
+  <select id="listPage" parameterType="com.edgedo.sys.queryvo.PickupArrangeQuery" resultMap="BaseResultViewMap">
+  		select <include refid="Base_Column_List"/> from pickup_arrange 
+  		<include refid="where"/>
+  </select>
+  
+   <!-- 不分页条件查询  -->
+  <select id="listByObj" parameterType="com.edgedo.sys.queryvo.PickupArrangeQuery" resultMap="BaseResultViewMap">
+  		select <include refid="Base_Column_List"/> from pickup_arrange 
+  		<include refid="where"/>
+  </select>
+
+	<select id="selectCountByEventId" parameterType="int" resultType="int">
+		select count(1) from pickup_arrange where deleted!=1 and event_id=#{eventId}
+	</select>
+  
+  
+</mapper>

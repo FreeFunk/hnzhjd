@@ -1,0 +1,166 @@
+package com.edgedo.sys.entity;
+
+import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.enums.IdType;
+
+@TableName("org")
+public class Org implements Serializable{
+	
+		
+	/**
+	 * 属性描述:id
+	 */
+	@TableId(value="id",type = IdType.AUTO)
+	java.lang.Integer id;
+	
+	/**
+	 * 属性描述:组织名称
+	 */
+	@TableField(value="name",exist=true)
+	java.lang.String name;
+	
+	/**
+	 * 属性描述:显示名称
+	 */
+	@TableField(value="show_name",exist=true)
+	java.lang.String showName;
+	
+	/**
+	 * 属性描述:省，同市处理一致
+	 */
+	@TableField(value="province",exist=true)
+	java.lang.String province;
+	
+	/**
+	 * 属性描述:暂时手动文本输入，后续或有支持的支持组件，可选择下拉选择
+	 */
+	@TableField(value="city",exist=true)
+	java.lang.String city;
+	
+	/**
+	 * 属性描述:deleted
+	 */
+	@TableField(value="deleted",exist=true)
+	java.lang.Boolean deleted;
+	
+	
+	
+	
+	
+	
+	public java.lang.Integer getId(){
+		return this.id;
+	}
+	
+	public void setId(java.lang.Integer id){
+		this.id=id;
+	}
+	
+	
+	public java.lang.String getName(){
+		return this.name;
+	}
+	
+	public void setName(java.lang.String name){
+		this.name=name;
+	}
+	
+	
+	public java.lang.String getShowName(){
+		return this.showName;
+	}
+	
+	public void setShowName(java.lang.String showName){
+		this.showName=showName;
+	}
+	
+	
+	public java.lang.String getProvince(){
+		return this.province;
+	}
+	
+	public void setProvince(java.lang.String province){
+		this.province=province;
+	}
+	
+	
+	public java.lang.String getCity(){
+		return this.city;
+	}
+	
+	public void setCity(java.lang.String city){
+		this.city=city;
+	}
+	
+	
+	public java.lang.Boolean getDeleted(){
+		return this.deleted;
+	}
+	
+	public void setDeleted(java.lang.Boolean deleted){
+		this.deleted=deleted;
+	}
+	
+	
+	
+	
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+			sb.append(", id=").append(id);			
+			sb.append(", name=").append(name);			
+			sb.append(", showName=").append(showName);			
+			sb.append(", province=").append(province);			
+			sb.append(", city=").append(city);			
+			sb.append(", deleted=").append(deleted);			
+        sb.append("]");
+        return sb.toString();
+    }
+
+   
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) {
+            return true;
+        }
+        if (that == null) {
+            return false;
+        }
+        if (getClass() != that.getClass()) {
+            return false;
+        }
+        Org other = (Org) that;
+        boolean flag = true;
+        return  flag
+        		&&(this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))		
+				        		&&(this.getName() == null ? other.getId() == null : this.getName().equals(other.getName()))		
+				        		&&(this.getShowName() == null ? other.getId() == null : this.getShowName().equals(other.getShowName()))		
+				        		&&(this.getProvince() == null ? other.getId() == null : this.getProvince().equals(other.getProvince()))		
+				        		&&(this.getCity() == null ? other.getId() == null : this.getCity().equals(other.getCity()))		
+				        		&&(this.getDeleted() == null ? other.getId() == null : this.getDeleted().equals(other.getDeleted()))		
+				;
+    }
+
+  
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());		
+		        result = prime * result + ((getName() == null) ? 0 : getName().hashCode());		
+		        result = prime * result + ((getShowName() == null) ? 0 : getShowName().hashCode());		
+		        result = prime * result + ((getProvince() == null) ? 0 : getProvince().hashCode());		
+		        result = prime * result + ((getCity() == null) ? 0 : getCity().hashCode());		
+		        result = prime * result + ((getDeleted() == null) ? 0 : getDeleted().hashCode());		
+		;
+        return result;
+    }
+
+}

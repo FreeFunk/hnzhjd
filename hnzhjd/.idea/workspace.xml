@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d58d0867-e29b-4252-804b-dcafd8317880" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/common-base/common-base.iml" beforeDir="false" afterPath="$PROJECT_DIR$/common-base/common-base.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-base/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-base/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-base/src/main/java/com/edgedo/common/util/oss" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys-mng-web/src/main/java/com/edgedo/sys/mapper/SysUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys-mng-web/src/main/java/com/edgedo/sys/mapper/SysUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys-mng-web/sys-mng-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sys-mng-web/sys-mng-web.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhjd-mng/src/main/resources/static/layuiadmin/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/zhjd-mng/src/main/resources/static/layuiadmin/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/meetingRoom/MeetingRoomAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/meetingRoom/MeetingRoomAdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/meetingRoom/MeetingRoomEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/meetingRoom/MeetingRoomEdit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/meetingRoom/MeetingRoomList.html" beforeDir="false" afterPath="$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/meetingRoom/MeetingRoomList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhjd-mng/zhjd-mng.iml" beforeDir="false" afterPath="$PROJECT_DIR$/zhjd-mng/zhjd-mng.iml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/sys-mng-web/target/" />
+    <ignored path="$PROJECT_DIR$/common-base/target/" />
+    <ignored path="$PROJECT_DIR$/zhjd-mng/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>setCarType</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/queryvo/CarView.java" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/car/CarEdit.html" />
+        <option value="$PROJECT_DIR$/sys-mng-web/src/main/java/com/edgedo/sys/mapper/SysUserMapper.java" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/controller/CarController.java" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/car/CarAdd.html" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/controller/MeetingRoomController.java" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/resources/static/layuiadmin/config.js" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/entity/MeetingRoom.java" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/queryvo/MeetingRoomQuery.java" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/mapper/MeetingRoomMapper.java" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/service/MeetingRoomService.java" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/resources/mapper/zhjd/MeetingRoomMapper.xml" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/resources/mapper/zhjd/CarMapper.xml" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/mapper/OrgMapper.java" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/mapper/CarMapper.java" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/service/CarService.java" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/entity/Car.java" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/car/CarList.html" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/meetingRoom/MeetingRoomAdd.html" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/meetingRoom/MeetingRoomList.html" />
+        <option value="$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/meetingRoom/MeetingRoomEdit.html" />
+        <option value="$PROJECT_DIR$/common-base/src/main/java/com/edgedo/common/util/oss/CloudStorageConfig.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="465" />
+    <option name="y" value="35" />
+    <option name="width" value="1030" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560931413914" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/17013373SSH/SSH/MingPian" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="spring.boot" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/common-base/src/main/java/com/edgedo/common/util/oss/CloudStorageConfig.java" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ZhjdWebApplication">
+    <configuration name="SysMngWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="sys-mng-web" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.edgedo.SysMngWebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZhjdWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="zhjd-mng" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.edgedo.ZhjdWebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpringBootHealthEndpointTabSettings">
+    <option name="checkHealth" value="false" />
+  </component>
+  <component name="SpringBootOptions">
+    <option name="autoCreateRunConfiguration" value="false" />
+    <option name="reformatAfterCreation" value="false" />
+    <option name="showAdditionalConfigNotification" value="false" />
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\acer\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+    <option name="FORCE_UPDATE" value="true" />
+    <option name="IGNORE_EXTERNALS" value="true" />
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\hangling\other\hnzhjd" />
+          <option name="myCopyRoot" value="D:\hangling\other\hnzhjd" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\hangling\other\hnzhjd\common-base" />
+          <option name="myCopyRoot" value="D:\hangling\other\hnzhjd\common-base" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\hangling\other\hnzhjd\sys-mng-web" />
+          <option name="myCopyRoot" value="D:\hangling\other\hnzhjd\sys-mng-web" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\hangling\other\hnzhjd\zhjd-mng" />
+          <option name="myCopyRoot" value="D:\hangling\other\hnzhjd\zhjd-mng" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\hangling\other\hnzhjd" />
+          <option name="myCopyRoot" value="D:\hangling\other\hnzhjd" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d58d0867-e29b-4252-804b-dcafd8317880" name="Default Changelist" comment="" />
+      <created>1560648636276</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1560648636276</updated>
+      <workItem from="1560648647064" duration="26265000" />
+      <workItem from="1560677038607" duration="1003000" />
+      <workItem from="1560732944667" duration="7984000" />
+      <workItem from="1560753154628" duration="7953000" />
+      <workItem from="1560761194507" duration="3992000" />
+      <workItem from="1560782558364" duration="1679000" />
+      <workItem from="1560819333572" duration="6922000" />
+      <workItem from="1560839799775" duration="951000" />
+      <workItem from="1560909884865" duration="1234000" />
+      <workItem from="1560928866881" duration="2606000" />
+      <workItem from="1560933970574" duration="66000" />
+    </task>
+    <task id="LOCAL-00001">
+      <created>1560671501856</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1560671501856</updated>
+    </task>
+    <task id="LOCAL-00002">
+      <created>1560678009989</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1560678009989</updated>
+    </task>
+    <task id="LOCAL-00003">
+      <created>1560757935255</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1560757935255</updated>
+    </task>
+    <task id="LOCAL-00004">
+      <created>1560758659630</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1560758659630</updated>
+    </task>
+    <task id="LOCAL-00005">
+      <created>1560764732462</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1560764732462</updated>
+    </task>
+    <task id="LOCAL-00006">
+      <created>1560825364545</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1560825364545</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="60655000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info id="Image Layers" order="0" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Web" order="4" side_tool="true" />
+      <window_info id="Designer" order="5" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.20911528" />
+      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Problems" order="0" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.329429" />
+      <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.5013405" side_tool="true" weight="0.329429" />
+      <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.49865952" weight="0.329429" />
+      <window_info anchor="bottom" id="Java Enterprise" order="5" weight="0.329429" />
+      <window_info anchor="bottom" id="Database Changes" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49865952" weight="0.329429" />
+      <window_info anchor="bottom" id="Spring" order="8" weight="0.329429" />
+      <window_info anchor="bottom" id="Message" order="9" />
+      <window_info anchor="bottom" id="Find" order="10" weight="0.329429" />
+      <window_info anchor="bottom" id="Run" order="11" sideWeight="0.49798927" weight="0.30161053" />
+      <window_info anchor="bottom" id="Debug" order="12" sideWeight="0.49798927" weight="0.54026353" />
+      <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="15" weight="0.329429" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Database" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Bean Validation" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/sys-mng-web/src/main/java/com/edgedo/sys/mapper/SysUserOpLogMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-58">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-mng-web/src/main/java/com/edgedo/sys/mapper/SysUserLoginLogMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-63">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-mng-web/src/main/java/com/edgedo/sys/mapper/SysRolePowerMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-63">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-mng-web/src/main/resources/mapper/sys/SysRoleMenueMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="56" column="33" lean-forward="true" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-mng-web/src/main/java/com/edgedo/sys/mapper/SysRoleMenueMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="36" column="20" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-mng-web/src/main/java/com/edgedo/sys/mapper/SysPowerMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-411">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-mng-web/src/main/resources/mapper/sys/SysUserLoginLogMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-986">
+          <caret line="5" column="77" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-mng-web/src/main/resources/mapper/sys/SysOrgLevelRoleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2513" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-mng-web/src/main/java/com/edgedo/sys/queryvo/SysUserQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+          <folding>
+            <element signature="e#389#390#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-mng-web/src/main/java/com/edgedo/sys/queryvo/SysUserView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="24" />
+          <folding>
+            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#378#379#0" expanded="true" />
+            <element signature="e#433#434#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-mng-web/src/main/java/com/edgedo/sys/service/SysUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="332" column="22" lean-forward="true" selection-start-line="332" selection-start-column="22" selection-end-line="332" selection-end-column="22" />
+          <folding>
+            <element signature="e#7506#7507#0" expanded="true" />
+            <element signature="e#7555#7556#0" expanded="true" />
+            <element signature="e#8379#8380#0" expanded="true" />
+            <element signature="e#8422#8423#0" expanded="true" />
+            <element signature="e#8472#8473#0" expanded="true" />
+            <element signature="e#8512#8513#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-mng-web/src/main/java/com/edgedo/sys/mapper/SysOrgLevelRoleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-mng-web/src/main/java/com/edgedo/sys/controller/SysUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3886">
+          <caret line="163" column="59" selection-start-line="163" selection-start-column="51" selection-end-line="163" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-mng-web/src/main/java/com/edgedo/sys/mapper/SysUserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="40" column="59" selection-start-line="40" selection-start-column="59" selection-end-line="40" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/queryvo/CarView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-mng-web/src/main/resources/mapper/sys/SysUserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="55" column="60" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/queryvo/CarQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#470#471#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-mng-web/src/main/resources/static/views/com/edgedo/sys/sysuser/SysUserList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="133" column="32" selection-start-line="133" selection-start-column="22" selection-end-line="133" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/controller/MeetingRoomArrangeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/meetingRoomArrange/MeetingRoomArrangeAdd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-870" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus/2.1.2/mybatis-plus-2.1.2.jar!/com/baomidou/mybatisplus/mapper/BaseMapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/org/OrgList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="94" column="29" lean-forward="true" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/resources/mapper/zhjd/MeetingRoomArrangeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/car/CarAdd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1910">
+          <caret line="92" column="12" selection-start-line="92" selection-start-column="12" selection-end-line="94" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/resources/static/layuiadmin/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="175" column="53" selection-start-line="175" selection-start-column="53" selection-end-line="175" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/mapper/RoomArrangeMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/mapper/RestaurantMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/service/OrgService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/queryvo/MeetingRoomView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/entity/Org.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/queryvo/OrgView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/mapper/OrgMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/mapper/CarMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/service/CarService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/entity/MeetingRoom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1972">
+          <caret line="73" column="4" selection-start-line="73" selection-start-column="4" selection-end-line="75" selection-end-column="7" />
+          <folding>
+            <element signature="e#1443#1444#0" expanded="true" />
+            <element signature="e#1470#1471#0" expanded="true" />
+            <element signature="e#1525#1526#0" expanded="true" />
+            <element signature="e#1566#1567#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/controller/MeetingRoomController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/entity/Car.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1624">
+          <caret line="61" column="34" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="34" />
+          <folding>
+            <element signature="e#1135#1136#0" expanded="true" />
+            <element signature="e#1162#1163#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/service/MeetingRoomService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="27" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/queryvo/MeetingRoomQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/mapper/MeetingRoomMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="37" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/resources/mapper/zhjd/MeetingRoomMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="100" column="4" selection-start-line="100" selection-start-column="4" selection-end-line="102" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/car/CarEdit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2175" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common-base/src/main/java/com/edgedo/common/util/oss/AliyunCloudStorageService.java" />
+    <entry file="file://$PROJECT_DIR$/common-base/src/main/java/com/edgedo/common/util/oss/QcloudCloudStorageService.java" />
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/resources/mapper/zhjd/CarMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1105">
+          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/java/com/edgedo/sys/controller/CarController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-851">
+          <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common-base/src/main/java/com/edgedo/common/util/oss/CloudStorageConfig.java" />
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/meetingRoom/MeetingRoomList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2987">
+          <caret line="103" column="79" selection-start-line="103" selection-start-column="79" selection-end-line="103" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/meetingRoom/MeetingRoomAdd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1479">
+          <caret line="51" column="56" selection-start-line="51" selection-start-column="56" selection-end-line="51" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/car/CarList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="94" column="21" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhjd-mng/src/main/resources/static/views/com/edgedo/znjd/meetingRoom/MeetingRoomEdit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>unnamed</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>common-base</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.alibaba:druid:1.1.3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

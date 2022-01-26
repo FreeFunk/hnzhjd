@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>编辑</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="../../../../../layuiadmin/layui/css/layui.css" media="all">
+</head>
+<body>
+
+<div class="layui-form" lay-filter="PickupArrange-form" id="PickupArrange-form" style="padding: 20px 30px 0 0;">
+                <div class="layui-form-item layui-hide">
+                    <label class="layui-form-label">id</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="id" id="id" lay-verify="required" placeholder="请输入id" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">出发站点</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="fromStation" lay-verify="required" placeholder="请输入出发站点" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">到达站点</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="endStation" lay-verify="required" placeholder="请输入到达站点" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">出发城市</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="startCity" lay-verify="required" placeholder="请输入出发城市" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">到达城市</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="endCity" lay-verify="required" placeholder="请输入到达城市" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">出发时间</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="startTime" lay-verify="required" placeholder="请输入出发时间" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">结束时间</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="endTime" lay-verify="required" placeholder="请输入结束时间" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">动态详情</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="details" lay-verify="required" placeholder="请输入动态详情" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">更新时间</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="updateTime" lay-verify="required" placeholder="请输入更新时间" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">秒时长</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="totalTimes" lay-verify="required" placeholder="请输入秒时长" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">类型</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="way" lay-verify="required" placeholder="请输入类型" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">交通车次信息</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="flightNo" lay-verify="required" placeholder="请输入交通车次信息" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">乘车人员</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="visitors" lay-verify="required" placeholder="请输入乘车人员" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">星期几</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="weekDay" lay-verify="required" placeholder="请输入星期几" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">receptionId</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="receptionId" lay-verify="required" placeholder="请输入receptionId" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">eventId</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="eventId" lay-verify="required" placeholder="请输入eventId" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">0=正常 1=删除</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="deleted" lay-verify="required" placeholder="请输入0=正常 1=删除" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+    <div class="layui-form-item layui-hide">
+        <input type="button" lay-submit lay-filter="PickupArrange-form-edit" id="PickupArrange-form-edit" value="确认编辑">
+    </div>
+</div>
+
+<script src="../../../../../layuiadmin/layui/layui.js"></script>
+<script>
+        layui.config({
+            base: '../../../../../layuiadmin/' //静态资源所在路径
+        }).extend({
+            index: 'lib/index', //主入口模块
+            $tool:'tool'
+        }).use(['index', 'form','$tool','laydate'], function(){
+
+            var $ = layui.$
+                ,$tool = layui.$tool
+                ,laydate = layui.laydate
+                ,admin = layui.admin
+                ,form = layui.form;
+
+            /*var queryArgs = $tool.getQueryParam();//获取查询参数
+            var id = queryArgs['id'];*/
+            //监听修改保存
+            form.on('submit(PickupArrange-form-edit)', function(data){
+                var field = data.field; //获取提交的字段
+                var index = parent.layer.getFrameIndex(window.name);//先得到当前iframe层的索引
+                admin.req({
+                    url:layui.setter.basePath +'/admin/pickupArrange/saveOrUpdate.jsn',
+                    data:field,
+                    method:"post",
+                    success:function (data) {
+                        parent.layui.table.reload('PickupArrange-list'); //重载表格
+                        parent.layer.close(index); //再执行关闭
+                        parent.layer.msg('修改成功', {
+                            icon: 1
+                        });
+                    }
+                });
+            });
+
+        })
+</script>
+</body>
+</html>

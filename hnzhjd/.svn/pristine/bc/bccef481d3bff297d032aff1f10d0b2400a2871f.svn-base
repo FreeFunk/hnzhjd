@@ -1,0 +1,226 @@
+package com.edgedo.sys.entity;
+
+import java.io.Serializable;
+import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.annotations.TableField;
+
+@TableName("define_arrange")
+public class DefineArrange implements Serializable{
+	
+		
+	/**
+	 * 属性描述:id
+	 */
+	@TableField(value="id",exist=true)
+	java.lang.Integer id;
+	
+	/**
+	 * 属性描述:startTime
+	 */
+	@TableField(value="start_time",exist=true)
+	java.lang.Long startTime;
+	
+	/**
+	 * 属性描述:endTime
+	 */
+	@TableField(value="end_time",exist=true)
+	java.lang.Long endTime;
+	
+	/**
+	 * 属性描述:html内容，自定义
+	 */
+	@TableField(value="content",exist=true)
+	java.lang.String content;
+	
+	/**
+	 * 属性描述:访问活动id
+	 */
+	@TableField(value="reception_id",exist=true)
+	java.lang.Integer receptionId;
+	
+	/**
+	 * 属性描述:事件id
+	 */
+	@TableField(value="event_id",exist=true)
+	java.lang.Integer eventId;
+	
+	/**
+	 * 属性描述:参与人员，0代表所有人
+	 */
+	@TableField(value="attendees",exist=true)
+	java.lang.String attendees;
+	
+	/**
+	 * 属性描述:创建时间
+	 */
+	@TableField(value="create_time",exist=true)
+	java.util.Date createTime;
+	
+	/**
+	 * 属性描述:更新时间
+	 */
+	@TableField(value="update_time",exist=true)
+	java.util.Date updateTime;
+
+	/**
+	 * 属性描述:0=正常 1=删除
+	 */
+	@TableField(value="deleted",exist=true)
+	java.lang.Boolean deleted;
+
+	public Boolean getDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(Boolean deleted) {
+		this.deleted = deleted;
+	}
+
+	public java.lang.Integer getId(){
+		return this.id;
+	}
+	
+	public void setId(java.lang.Integer id){
+		this.id=id;
+	}
+	
+	
+	public java.lang.Long getStartTime(){
+		return this.startTime;
+	}
+	
+	public void setStartTime(java.lang.Long startTime){
+		this.startTime=startTime;
+	}
+	
+	
+	public java.lang.Long getEndTime(){
+		return this.endTime;
+	}
+	
+	public void setEndTime(java.lang.Long endTime){
+		this.endTime=endTime;
+	}
+	
+	
+	public java.lang.String getContent(){
+		return this.content;
+	}
+	
+	public void setContent(java.lang.String content){
+		this.content=content;
+	}
+	
+	
+	public java.lang.Integer getReceptionId(){
+		return this.receptionId;
+	}
+	
+	public void setReceptionId(java.lang.Integer receptionId){
+		this.receptionId=receptionId;
+	}
+	
+	
+	public java.lang.Integer getEventId(){
+		return this.eventId;
+	}
+	
+	public void setEventId(java.lang.Integer eventId){
+		this.eventId=eventId;
+	}
+	
+	
+	public java.lang.String getAttendees(){
+		return this.attendees;
+	}
+	
+	public void setAttendees(java.lang.String attendees){
+		this.attendees=attendees;
+	}
+	
+	
+	public java.util.Date getCreateTime(){
+		return this.createTime;
+	}
+	
+	public void setCreateTime(java.util.Date createTime){
+		this.createTime=createTime;
+	}
+	
+	
+	public java.util.Date getUpdateTime(){
+		return this.updateTime;
+	}
+	
+	public void setUpdateTime(java.util.Date updateTime){
+		this.updateTime=updateTime;
+	}
+	
+	
+	
+	
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+			sb.append(", id=").append(id);			
+			sb.append(", startTime=").append(startTime);			
+			sb.append(", endTime=").append(endTime);			
+			sb.append(", content=").append(content);			
+			sb.append(", receptionId=").append(receptionId);			
+			sb.append(", eventId=").append(eventId);			
+			sb.append(", attendees=").append(attendees);			
+			sb.append(", createTime=").append(createTime);			
+			sb.append(", updateTime=").append(updateTime);			
+        sb.append("]");
+        return sb.toString();
+    }
+
+   
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) {
+            return true;
+        }
+        if (that == null) {
+            return false;
+        }
+        if (getClass() != that.getClass()) {
+            return false;
+        }
+        DefineArrange other = (DefineArrange) that;
+        boolean flag = true;
+        return  flag
+        		&&(this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))		
+				        		&&(this.getStartTime() == null ? other.getId() == null : this.getStartTime().equals(other.getStartTime()))		
+				        		&&(this.getEndTime() == null ? other.getId() == null : this.getEndTime().equals(other.getEndTime()))		
+				        		&&(this.getContent() == null ? other.getId() == null : this.getContent().equals(other.getContent()))		
+				        		&&(this.getReceptionId() == null ? other.getId() == null : this.getReceptionId().equals(other.getReceptionId()))		
+				        		&&(this.getEventId() == null ? other.getId() == null : this.getEventId().equals(other.getEventId()))		
+				        		&&(this.getAttendees() == null ? other.getId() == null : this.getAttendees().equals(other.getAttendees()))		
+				        		&&(this.getCreateTime() == null ? other.getId() == null : this.getCreateTime().equals(other.getCreateTime()))		
+				        		&&(this.getUpdateTime() == null ? other.getId() == null : this.getUpdateTime().equals(other.getUpdateTime()))		
+				;
+    }
+
+  
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());		
+		        result = prime * result + ((getStartTime() == null) ? 0 : getStartTime().hashCode());		
+		        result = prime * result + ((getEndTime() == null) ? 0 : getEndTime().hashCode());		
+		        result = prime * result + ((getContent() == null) ? 0 : getContent().hashCode());		
+		        result = prime * result + ((getReceptionId() == null) ? 0 : getReceptionId().hashCode());		
+		        result = prime * result + ((getEventId() == null) ? 0 : getEventId().hashCode());		
+		        result = prime * result + ((getAttendees() == null) ? 0 : getAttendees().hashCode());		
+		        result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());		
+		        result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());		
+		;
+        return result;
+    }
+
+}

@@ -1,0 +1,191 @@
+package com.edgedo.sys.entity;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.enums.IdType;
+
+@TableName("reception")
+public class Reception implements Serializable{
+	
+		
+	/**
+	 * 属性描述:id
+	 */
+	@TableId(value="id",type = IdType.AUTO)
+	java.lang.Integer id;
+	
+	/**
+	 * 属性描述:访问主题
+	 */
+	@TableField(value="title",exist=true)
+	java.lang.String title;
+	
+	/**
+	 * 属性描述:来访者组织
+	 */
+	@TableField(value="org_name",exist=true)
+	java.lang.String orgName;
+	
+	/**
+	 * 属性描述:开始时间
+	 */
+	@TableField(value="start_time",exist=true)
+	java.util.Date startTime;
+	
+	/**
+	 * 属性描述:结束时间
+	 */
+	@TableField(value="end_time",exist=true)
+	java.util.Date endTime;
+	
+	/**
+	 * 属性描述:deleted
+	 */
+	@TableField(value="deleted",exist=true)
+	java.lang.Boolean deleted;
+	
+	/**
+	 * 属性描述:组织id
+	 */
+	@TableField(value="org_id",exist=true)
+	java.lang.Integer orgId;
+
+	/**
+	 * 属性描述:组织id
+	 */
+	@TableField(value="data_org_id",exist=true)
+	java.lang.Integer dataOrgId;
+
+
+	public Integer getDataOrgId() {
+		return dataOrgId;
+	}
+
+	public void setDataOrgId(Integer dataOrgId) {
+		this.dataOrgId = dataOrgId;
+	}
+
+	public java.lang.Integer getId(){
+		return this.id;
+	}
+	
+	public void setId(java.lang.Integer id){
+		this.id=id;
+	}
+	
+	
+	public java.lang.String getTitle(){
+		return this.title;
+	}
+	
+	public void setTitle(java.lang.String title){
+		this.title=title;
+	}
+	
+	
+	public java.lang.String getOrgName(){
+		return this.orgName;
+	}
+	
+	public void setOrgName(java.lang.String orgName){
+		this.orgName=orgName;
+	}
+
+	public Date getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
+	}
+
+	public Date getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
+	}
+
+	public Boolean getDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(Boolean deleted) {
+		this.deleted = deleted;
+	}
+
+	public java.lang.Integer getOrgId(){
+		return this.orgId;
+	}
+	
+	public void setOrgId(java.lang.Integer orgId){
+		this.orgId=orgId;
+	}
+	
+	
+	
+	
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+			sb.append(", id=").append(id);			
+			sb.append(", title=").append(title);			
+			sb.append(", orgName=").append(orgName);			
+			sb.append(", startTime=").append(startTime);
+			sb.append(", endTime=").append(endTime);			
+			sb.append(", deleted=").append(deleted);			
+			sb.append(", orgId=").append(orgId);			
+        sb.append("]");
+        return sb.toString();
+    }
+
+   
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) {
+            return true;
+        }
+        if (that == null) {
+            return false;
+        }
+        if (getClass() != that.getClass()) {
+            return false;
+        }
+        Reception other = (Reception) that;
+        boolean flag = true;
+        return  flag
+        		&&(this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))		
+				        		&&(this.getTitle() == null ? other.getId() == null : this.getTitle().equals(other.getTitle()))		
+				        		&&(this.getOrgName() == null ? other.getId() == null : this.getOrgName().equals(other.getOrgName()))		
+				        		&&(this.getStartTime() == null ? other.getId() == null : this.getStartTime().equals(other.getStartTime()))		
+				        		&&(this.getEndTime() == null ? other.getId() == null : this.getEndTime().equals(other.getEndTime()))		
+				        		&&(this.getDeleted() == null ? other.getId() == null : this.getDeleted().equals(other.getDeleted()))		
+				        		&&(this.getOrgId() == null ? other.getId() == null : this.getOrgId().equals(other.getOrgId()))		
+				;
+    }
+
+  
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());		
+		        result = prime * result + ((getTitle() == null) ? 0 : getTitle().hashCode());		
+		        result = prime * result + ((getOrgName() == null) ? 0 : getOrgName().hashCode());		
+		        result = prime * result + ((getStartTime() == null) ? 0 : getStartTime().hashCode());		
+		        result = prime * result + ((getEndTime() == null) ? 0 : getEndTime().hashCode());		
+		        result = prime * result + ((getDeleted() == null) ? 0 : getDeleted().hashCode());		
+		        result = prime * result + ((getOrgId() == null) ? 0 : getOrgId().hashCode());		
+		;
+        return result;
+    }
+
+}

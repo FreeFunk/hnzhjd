@@ -1,0 +1,8 @@
+package com.edgedo.sys.queryvo;
+
+import com.edgedo.sys.entity.Org;
+
+public class OrgView extends Org {
+
+
+}

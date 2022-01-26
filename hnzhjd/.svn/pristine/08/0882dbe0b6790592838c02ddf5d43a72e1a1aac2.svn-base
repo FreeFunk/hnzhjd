@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.edgedo.sys.mapper.RoomArrangeMapper" >
+   
+   
+    <resultMap id="BaseResultMap" type="com.edgedo.sys.entity.RoomArrange" >
+			<id column="id" property="id"/>
+			<result column="guard_attendance_id" property="guardAttendanceId"/>
+			<result column="charger_attendance_id" property="chargerAttendanceId"/>
+			<result column="hotel_id" property="hotelId"/>
+			<result column="reception_id" property="receptionId"/>
+			<result column="event_id" property="eventId"/>
+			<result column="start_date" property="startDate"/>
+			<result column="end_date" property="endDate"/>
+			<result column="deleted" property="deleted"/>
+    </resultMap>
+   
+    <resultMap id="BaseResultViewMap" type="com.edgedo.sys.queryvo.RoomArrangeView" extends="BaseResultMap">
+    
+    </resultMap>
+  
+  
+  <!-- ******* 新增字段请修改这里  ******  -->
+  <sql id="Base_Column_List">
+	 id, guard_attendance_id, charger_attendance_id, hotel_id, reception_id, event_id, start_date, end_date,deleted
+  </sql>
+  
+  <!-- ******* 利用好这里的动态查询条件  ******  -->
+  <sql id="where">
+  	<where>
+		deleted!=1
+		<if test='queryObj != null and  queryObj.id != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.id)'>
+			AND  id = #{queryObj.id}
+		</if>
+		<if test='queryObj != null and  queryObj.guardAttendanceId != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.guardAttendanceId)'>
+			AND  guard_attendance_id = #{queryObj.guardAttendanceId}
+		</if>
+		<if test='queryObj != null and  queryObj.chargerAttendanceId != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.chargerAttendanceId)'>
+			AND  charger_attendance_id = #{queryObj.chargerAttendanceId}
+		</if>
+		<if test='queryObj != null and  queryObj.hotelId != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.hotelId)'>
+			AND  hotel_id = #{queryObj.hotelId}
+		</if>
+		<if test='queryObj != null and  queryObj.receptionId != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.receptionId)'>
+			AND  reception_id = #{queryObj.receptionId}
+		</if>
+		<if test='queryObj != null and  queryObj.eventId != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.eventId)'>
+			AND  event_id = #{queryObj.eventId}
+		</if>
+  	</where>
+  	
+  </sql>
+  
+  <!-- ******* 排序判断  ******  
+  <sql id="orderBy">
+  	<if test="orderBy != null and orderBy!= '' ">
+  		order by  ${orderBy}
+  	</if>
+  </sql>-->
+  
+  
+  <!-- 分页条件查询  -->
+  <select id="listPage" parameterType="com.edgedo.sys.queryvo.RoomArrangeQuery" resultMap="BaseResultViewMap">
+  		select <include refid="Base_Column_List"/> from room_arrange 
+  		<include refid="where"/>
+  </select>
+  
+   <!-- 不分页条件查询  -->
+  <select id="listByObj" parameterType="com.edgedo.sys.queryvo.RoomArrangeQuery" resultMap="BaseResultViewMap">
+  		select <include refid="Base_Column_List"/> from room_arrange 
+  		<include refid="where"/>
+  </select>
+  
+  
+</mapper>

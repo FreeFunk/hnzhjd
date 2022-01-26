@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>标题</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="../../../../../layuiadmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../../../../layuiadmin/style/admin.css" media="all">
+</head>
+<body>
+
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">搜索条件1</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="queryObj.name" placeholder="请输入" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">搜索条件2</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="queryObj.name" placeholder="请输入" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layuiadmin-btn-comm" data-type="reload" lay-submit lay-filter="Attendance-search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="layui-card-body">
+            <div style="padding-bottom: 10px;">
+                <button class="layui-btn layuiadmin-btn-comm" data-type="batchdel">删除</button>
+                <button class="layui-btn layuiadmin-btn-comm" data-type="add">添加</button>
+            </div>
+            <table id="Attendance-list" lay-filter="Attendance-list"></table>
+            <script type="text/html" id="table-Attendance-list">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+            </script>
+        </div>
+    </div>
+</div>
+<script src="../../../../../layuiadmin/layui/layui.js"></script>
+<script>
+        layui.config({
+            base: '../../../../../layuiadmin/' //静态资源所在路径
+        }).extend({
+            index:'lib/index',
+            common:'common'
+        }).use(['index','table', 'form','common'], function(exports){
+            var $ = layui.$
+                ,table = layui.table
+                ,common = layui.common
+                ,admin = layui.admin
+                ,form = layui.form;
+
+            //查询
+            form.on('submit(Attendance-search)', function(data){
+                var field = data.field;
+
+                //执行重载
+                table.reload('Attendance-list', {
+                    where: field
+                });
+            });
+
+            /*
+            * 定义表格
+            * */
+            defineTable = function () {
+                var headers = layui.admin.getTokenHeader();
+                table.render({
+                    elem: '#Attendance-list' //指定原始表格的选择器（id选择器）
+                    ,url:layui.setter.basePath +'/admin/attendance/listpage.jsn' //模拟接口
+                    ,headers:headers
+                    ,method: 'post'
+                    ,parseData: function(res){ //res 即为原始返回的数据
+                        return {
+                            "code": res.success, //解析接口状态
+                            "msg": res.errMsg, //解析提示文本
+                            "count": res.totalCount, //解析数据长度
+                            "data": res.list //解析数据列表
+                        };
+                    }
+                    ,response: {
+                        statusCode: true //规定成功的状态码，默认：0
+                    }
+                    ,cols: [[
+                        {type: 'checkbox', fixed: 'left'}
+                    ,{field: 'id',align: 'center', width: 200, title: 'id',sort: true,hide:true}
+            ,{field: 'name',align: 'center', width: 200, title: '姓名',sort: true}
+            ,{field: 'gender',align: 'center', width: 200, title: '性别',sort: true}
+            ,{field: 'telephone',align: 'center', width: 200, title: '手机',sort: true}
+            ,{field: 'receptionId',align: 'center', width: 200, title: '访问id',sort: true}
+            ,{field: 'nation',align: 'center', width: 200, title: '民族',sort: true}
+            ,{field: 'jobTitle',align: 'center', width: 200, title: '职称',sort: true}
+            ,{field: 'jobName',align: 'center', width: 200, title: '工作称谓',sort: true}
+            ,{field: 'remark',align: 'center', width: 200, title: '备注',sort: true}
+            ,{field: 'portrait',align: 'center', width: 200, title: '头像',sort: true}
+            ,{field: 'userId',align: 'center', width: 200, title: 'user表用户id',sort: true}
+            ,{field: 'level',align: 'center', width: 200, title: '级别,大的级别管小的级别',sort: true}
+            ,{field: 'group',align: 'center', width: 200, title: '分组名称。只针对来访人员',sort: true}
+            ,{field: 'type',align: 'center', width: 200, title: '来访人员 / 接待人员 / 陪同人员',sort: true}
+            ,{field: 'showOrder',align: 'center', width: 200, title: '人员名单显示顺序--此字段目前前段未详细使用，可提供简单文本录入即可',sort: true}
+            ,{field: 'orgId',align: 'center', width: 200, title: '组织id',sort: true}
+            ,{field: 'email',align: 'center', width: 200, title: '邮箱',sort: true}
+            ,{field: 'idCode',align: 'center', width: 200, title: '身份证件号',sort: true}
+            ,{field: 'welcome',align: 'center', width: 200, title: '个性化欢迎语，针对不同用户可定制欢迎语',sort: true}
+                    ,{field: 'createTime',align: 'center', width: 200, title: '创建时间',templet: function(d){
+                    return common.DateFormat(d.createTime,"yyyy-MM-dd");},sort: true}
+                    ,{field: 'updateTime',align: 'center', width: 200, title: '更新时间',templet: function(d){
+                    return common.DateFormat(d.updateTime,"yyyy-MM-dd");},sort: true}
+            ,{field: 'deleted',align: 'center', width: 200, title: '0=正常 1=删除',sort: true}
+                    ,{title: '操作', minWidth: 150, align: 'center', fixed: 'right', toolbar: '#table-Attendance-list'}
+            ]]
+            ,autoSort: false
+                    ,page: true
+                    ,limit: 10
+                    ,limits: [10, 20, 30,40]
+                    ,text: {
+                    none: '暂无相关数据'
+                }
+            });
+
+                //为toolbar添加事件响应
+                table.on('tool(Attendance-list)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+                    /*var data = obj.data;*///获得当前行数据
+                    //区分事件
+                    switch(obj.event){
+                        case 'del':
+                            deleteVo(obj);
+                            break;
+                        case 'edit':
+                            editVo(obj);
+                            break;
+                    };
+                });
+
+                //监听排序事件
+                table.on('sort(Attendance-list)', function(obj){ //注：sort是工具条事件名，LAY-app-province-list是table原始容器的属性 lay-filter="对应的值"
+                    var sort = obj.field;
+                    //默认排序
+                    switch(obj.field){
+                        case 'id':
+                            sort ="id";
+                            break;
+                        case 'name':
+                            sort ="name";
+                            break;
+                        case 'gender':
+                            sort ="gender";
+                            break;
+                        case 'telephone':
+                            sort ="telephone";
+                            break;
+                        case 'receptionId':
+                            sort ="reception_id";
+                            break;
+                        case 'nation':
+                            sort ="nation";
+                            break;
+                        case 'jobTitle':
+                            sort ="job_title";
+                            break;
+                        case 'jobName':
+                            sort ="job_name";
+                            break;
+                        case 'remark':
+                            sort ="remark";
+                            break;
+                        case 'portrait':
+                            sort ="portrait";
+                            break;
+                        case 'userId':
+                            sort ="user_id";
+                            break;
+                        case 'level':
+                            sort ="level";
+                            break;
+                        case 'group':
+                            sort ="group";
+                            break;
+                        case 'type':
+                            sort ="type";
+                            break;
+                        case 'showOrder':
+                            sort ="show_order";
+                            break;
+                        case 'orgId':
+                            sort ="org_id";
+                            break;
+                        case 'email':
+                            sort ="email";
+                            break;
+                        case 'idCode':
+                            sort ="id_code";
+                            break;
+                        case 'welcome':
+                            sort ="welcome";
+                            break;
+                        case 'createTime':
+                            sort ="create_time";
+                            break;
+                        case 'updateTime':
+                            sort ="update_time";
+                            break;
+                        case 'deleted':
+                            sort ="deleted";
+                            break;
+                    };
+                    if(obj.type==null){
+                        return;
+                    }
+                    //有些时候，你可能需要根据当前排序的字段，重新向服务端发送请求，从而实现服务端排序，如：
+                    table.reload('Attendance-list', {
+                        initSort: obj//记录初始排序，如果不设的话，将无法标记表头的排序状态。
+                        ,where: { //请求参数（注意：这里面的参数可任意定义，并非下面固定的格式）
+                            orderBy: sort+" "+obj.type //排序字段
+                        }
+                    });
+                });
+            }
+            defineTable();
+
+            //删除
+            deleteVo = function (obj) {
+                layer.confirm('确定删除此记录吗？', function(index){
+                    admin.req({
+                        url:layui.setter.basePath +'/admin/attendance/deleteByIds.jsn',
+                        data:{'ids':obj.data.id},
+                        method:"post",
+                        success:function (data) {
+                            table.reload('Attendance-list',
+                                {page:
+                                    { curr: common.deleteJumpPage(obj) // 执行页面跳转方法
+                                    }
+                                }
+                            );
+                            layer.close(index);
+                            layer.msg('删除成功', {
+                                icon: 1
+                            });
+                        },
+                    });
+                });
+            }
+            //编辑
+            editVo = function (obj) {
+                layer.open({
+                    type: 2
+                    ,title: '编辑'
+                    ,content: 'AttendanceEdit.html'
+                    ,maxmin: true
+                    ,area: ['550px', '550px']
+                    ,btn: ['确定', '取消']
+                    ,success: function(layero, index){
+                        var s = layero.find('iframe');
+                        $("id",s[0].contentWindow.document).val(obj.data.id);
+                        //给iframe元素赋值
+                        var othis = layero.find('iframe').contents().find("#Attendance-form").click();
+
+                        othis.find('input[name="id"]').val(obj.data.id);
+                        othis.find('input[name="name"]').val(obj.data.name);
+                        othis.find('input[name="gender"]').val(obj.data.gender);
+                        othis.find('input[name="telephone"]').val(obj.data.telephone);
+                        othis.find('input[name="receptionId"]').val(obj.data.receptionId);
+                        othis.find('input[name="nation"]').val(obj.data.nation);
+                        othis.find('input[name="jobTitle"]').val(obj.data.jobTitle);
+                        othis.find('input[name="jobName"]').val(obj.data.jobName);
+                        othis.find('input[name="remark"]').val(obj.data.remark);
+                        othis.find('input[name="portrait"]').val(obj.data.portrait);
+                        othis.find('input[name="userId"]').val(obj.data.userId);
+                        othis.find('input[name="level"]').val(obj.data.level);
+                        othis.find('input[name="group"]').val(obj.data.group);
+                        othis.find('input[name="type"]').val(obj.data.type);
+                        othis.find('input[name="showOrder"]').val(obj.data.showOrder);
+                        othis.find('input[name="orgId"]').val(obj.data.orgId);
+                        othis.find('input[name="email"]').val(obj.data.email);
+                        othis.find('input[name="idCode"]').val(obj.data.idCode);
+                        othis.find('input[name="welcome"]').val(obj.data.welcome);
+                        othis.find('input[name="createTime"]').val(obj.data.createTime);
+                        othis.find('input[name="updateTime"]').val(obj.data.updateTime);
+                        othis.find('input[name="deleted"]').val(obj.data.deleted);
+                    }
+                    ,yes: function(index, layero){
+                        var submit = layero.find('iframe').contents().find("#Attendance-form-edit");
+                        submit.trigger('click');
+                    }
+                });
+            }
+
+            //点击事件
+            var active = {
+                //批量删除
+                batchdel: function(){
+                    var checkStatus = table.checkStatus('Attendance-list')
+                        ,checkData = checkStatus.data; //得到选中的数据
+
+                    if(checkData.length === 0){
+                        return layer.msg('请选择数据');
+                    }
+
+                    layer.confirm('确定删除吗？', function(index) {
+                        var ids = "" ;
+                        for(var i = 0;i<checkData.length;i++){
+                            if(ids==""){
+                                ids= checkData[i].id;
+                            }else {
+                                ids = ids+","+checkData[i].id;
+                            }
+                        }
+                        admin.req({
+                            url:layui.setter.basePath +'/admin/attendance/deleteByIds.jsn',
+                            data:{'ids':ids},
+                            method:"post",
+                            success:function (data) {
+                                table.reload('Attendance-list',
+                                    {page:
+                                        { curr: common.deleteDulJumpPage(checkStatus) // 执行页面跳转方法
+                                        }
+                                    }
+                                );
+                                layer.msg('删除成功', {
+                                    icon: 1
+                                });
+                            },
+                        });
+                    });
+                }
+                //添加
+                ,add: function(){
+                    layer.open({
+                        type: 2
+                        ,title: '添加'
+                        ,content: 'AttendanceAdd.html'
+                        ,maxmin: true
+                        ,area: ['550px', '550px']
+                        ,btn: ['确定', '取消']
+                        ,yes: function(index, layero){
+                            //点击确认触发 iframe 内容中的按钮提交
+                            var submit = layero.find('iframe').contents().find("#Attendance-form-submit");
+                            submit.click();
+                        }
+                    });
+                }
+            }
+            //绑定点击事件
+            $('.layui-btn.layuiadmin-btn-comm').on('click', function(){
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+
+
+        });
+
+</script>
+</body>
+</html>
+

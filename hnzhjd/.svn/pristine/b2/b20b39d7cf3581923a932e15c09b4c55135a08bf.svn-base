@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.edgedo.sys.mapper.CarMapper" >
+   
+   
+    <resultMap id="BaseResultMap" type="com.edgedo.sys.entity.Car" >
+			<id column="id" property="id"/>
+			<result column="org_id" property="orgId"/>
+			<result column="name" property="name"/>
+			<result column="code" property="code"/>
+			<result column="remark" property="remark"/>
+			<result column="seats" property="seats"/>
+			<result column="deleted" property="deleted"/>
+			<result column="car_type" property="carType"/>
+    </resultMap>
+   
+    <resultMap id="BaseResultViewMap" type="com.edgedo.sys.queryvo.CarView" extends="BaseResultMap">
+    
+    </resultMap>
+  
+  
+  <!-- ******* 新增字段请修改这里  ******  -->
+  <sql id="Base_Column_List">
+	id,org_id,name,code,remark,seats,deleted,car_type
+  </sql>
+
+  <!-- ******* 利用好这里的动态查询条件  ******  -->
+  <sql id="where">
+  	<where>
+		deleted!='1'
+			<if test='queryObj != null and  queryObj.orgId != null'>
+				AND  org_id = #{queryObj.orgId}
+			</if>
+			<if test='queryObj != null and  queryObj.name != null'>
+				AND  name = #{queryObj.name}
+			</if>
+			<if test='queryObj != null and  queryObj.remark != null'>
+				AND  remark = #{queryObj.remark}
+			</if>
+			<if test='queryObj != null and  queryObj.seats != null'>
+				AND  seats = #{queryObj.seats}
+			</if>
+			<if test='queryObj != null and  queryObj.code != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.code)'>
+				AND  code like '%${queryObj.code}%'
+			</if>
+			<if test='queryObj != null and  queryObj.carType != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.carType)'>
+				AND  car_type like '%${queryObj.carType}%'
+			</if>
+  	</where>
+  	
+  </sql>
+  
+  <!-- ******* 排序判断  ******  
+  <sql id="orderBy">
+  	<if test="orderBy != null and orderBy!= '' ">
+  		order by  ${orderBy}
+  	</if>
+  </sql>-->
+  
+  
+  <!-- 分页条件查询  -->
+  <select id="listPage" parameterType="com.edgedo.sys.queryvo.CarQuery" resultMap="BaseResultViewMap">
+  		select <include refid="Base_Column_List"/> from car 
+  		<include refid="where"/>
+  </select>
+  
+   <!-- 不分页条件查询  -->
+  <select id="listByObj" parameterType="com.edgedo.sys.queryvo.CarQuery" resultMap="BaseResultViewMap">
+  		select <include refid="Base_Column_List"/> from car
+  		<include refid="where"/>
+  </select>
+  
+	<insert id="insertCar" parameterType="com.edgedo.sys.entity.Car" >
+		insert into car(id,org_id,name,code,remark,seats,car_type)values (#{id},#{orgId},#{name},#{code},#{remark},#{seats},#{carType});
+	</insert>
+
+	<update id="updateByIdCar" parameterType="com.edgedo.sys.entity.Car">
+		update car set org_id=#{orgId},name=#{name},code=#{code},remark=#{remark},seats=#{seats},car_type=#{carType} where id=#{id};
+	</update>
+
+	<update id="deleteByIdCar" parameterType="java.lang.String">
+		update car set deleted=1 where id=#{ById};
+	</update>
+
+	<update id="deleteBatchIds" parameterType="java.util.List">
+		update car set deleted = 1 where id in
+		<foreach item="id" collection="list" open="(" close=")" separator=",">
+		         #{id}
+		</foreach>
+	</update>
+
+	<select id="selectCarCode" parameterType="java.lang.String" resultMap="BaseResultViewMap">
+		select <include refid="Base_Column_List"/> from car
+		WHERE deleted='0' AND code like "%"#{carCode}"%" AND car_type like "%"#{carType}"%"
+	</select>
+
+</mapper>

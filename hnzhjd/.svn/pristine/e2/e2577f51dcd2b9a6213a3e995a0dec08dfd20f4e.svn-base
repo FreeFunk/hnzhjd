@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.edgedo.sys.mapper.OrgMapper" >
+   
+   
+    <resultMap id="BaseResultMap" type="com.edgedo.sys.entity.Org" >
+			<id column="id" property="id"/>
+			<result column="name" property="name"/>
+			<result column="show_name" property="showName"/>
+			<result column="province" property="province"/>
+			<result column="province_id" property="provinceId"/>
+			<result column="city" property="city"/>
+			<result column="city_id" property="cityId"/>
+			<result column="deleted" property="deleted"/>
+    </resultMap>
+   
+    <resultMap id="BaseResultViewMap" type="com.edgedo.sys.queryvo.OrgView" extends="BaseResultMap">
+    
+    </resultMap>
+  
+  
+  <!-- ******* 新增字段请修改这里  ******  -->
+  <sql id="Base_Column_List">
+	 id, name, show_name, province,province_id, city,city_id, deleted
+  </sql>
+  
+  <!-- ******* 利用好这里的动态查询条件  ******  -->
+  <sql id="where">
+  	<where>
+		deleted!=1
+		<if test='queryObj != null and  queryObj.id != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.id)'>
+			AND  id = #{queryObj.id}
+		</if>
+		<if test='queryObj != null and  queryObj.nameSearch != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.nameSearch)'>
+			AND ( name like concat('%',#{queryObj.nameSearch},'') or show_name like concat('%',#{queryObj.nameSearch},''))
+		</if>
+		<if test='queryObj != null and  queryObj.areaStr != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(queryObj.areaStr)'>
+			AND ( province like concat('%',#{queryObj.areaStr},'') or city like concat('%',#{queryObj.areaStr},''))
+		</if>
+
+  	</where>
+  	
+  </sql>
+  
+  <!-- ******* 排序判断  ******  
+  <sql id="orderBy">
+  	<if test="orderBy != null and orderBy!= '' ">
+  		order by  ${orderBy}
+  	</if>
+  </sql>-->
+  
+  
+  <!-- 分页条件查询  -->
+  <select id="listPage" parameterType="com.edgedo.sys.queryvo.OrgQuery" resultMap="BaseResultViewMap">
+  		select <include refid="Base_Column_List"/> from org 
+  		<include refid="where"/>
+  </select>
+  
+   <!-- 不分页条件查询  -->
+  <select id="listByObj" parameterType="com.edgedo.sys.queryvo.OrgQuery" resultMap="BaseResultViewMap">
+  		select <include refid="Base_Column_List"/> from org 
+  		<include refid="where"/>
+  </select>
+
+	<select id="selectByOrgId" parameterType="integer" resultMap="BaseResultMap">
+		select <include refid="Base_Column_List"/> from org where deleted!='1' and id=#{id}
+	</select>
+
+	<!-- 查询所所有 -->
+	<select id="listAll" resultMap="BaseResultViewMap">
+		select <include refid="Base_Column_List"/>  from org where deleted!=1
+	</select>
+
+	<select id="selectIdByOrgName" parameterType="java.lang.String" resultType="integer">
+		select id from org where deleted=0 and name=#{orgName} limit 1
+	</select>
+
+	<!--  批量逻辑删除 -->
+	<update id="deleteByIdsLogic" parameterType="map" >
+		update org set deleted=1 where id in
+		<foreach collection="ids" open="(" close=")" separator="," item="id">
+			#{id}
+		</foreach>
+	</update>
+  
+  
+</mapper>

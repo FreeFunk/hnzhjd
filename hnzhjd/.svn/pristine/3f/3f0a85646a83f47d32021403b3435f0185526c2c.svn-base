@@ -1,0 +1,31 @@
+package com.edgedo.sys.mapper;
+
+import java.util.List;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.edgedo.sys.entity.RoomArrange;
+import com.edgedo.sys.queryvo.RoomArrangeQuery;
+import com.edgedo.sys.queryvo.RoomArrangeView;
+import org.apache.ibatis.annotations.Mapper;
+
+
+
+@Mapper
+public interface RoomArrangeMapper  extends BaseMapper<RoomArrange>{
+	
+	/**
+	 * 分页条件查询
+	 * @param query
+	 * @return
+	 */
+	public List<RoomArrangeView> listPage(RoomArrangeQuery query);
+	
+	/**
+	 * 不分页条件查询
+	 * @param query
+	 * @return
+	 */
+	public List<RoomArrangeView> listByObj(RoomArrangeQuery query);
+	
+	
+
+}
